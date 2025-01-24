@@ -1,0 +1,205 @@
+2025-01-23 09:14:35,861 [INFO] WebApp:190 - Connection lost
+2025-01-23 09:14:36,556 [INFO] WebApp:187 - Connection restablished
+2025-01-23 10:24:13,776 [INFO] WebApp:190 - Connection lost
+2025-01-23 10:24:13,941 [INFO] WebApp:187 - Connection restablished
+2025-01-23 10:33:36,753 [INFO] WebApp:190 - Connection lost
+2025-01-23 10:33:36,954 [INFO] WebApp:187 - Connection restablished
+2025-01-23 10:35:36,761 [INFO] WebApp:190 - Connection lost
+2025-01-23 10:35:36,984 [INFO] WebApp:187 - Connection restablished
+2025-01-23 10:56:03,760 [INFO] WebApp:190 - Connection lost
+2025-01-23 10:56:03,921 [INFO] WebApp:187 - Connection restablished
+2025-01-23 14:25:37,280 [INFO] WebApp:190 - Connection lost
+2025-01-23 14:25:37,437 [INFO] WebApp:187 - Connection restablished
+2025-01-23 14:42:54,355 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-01-23 14:42:56,751 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-01-23 14:43:40,413 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 608812816 Bytes (933232640)
+2025-01-23 14:43:41,742 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 625922368 Bytes (933232640)
+2025-01-23 14:43:42,389 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 684832528 Bytes (933232640)
+2025-01-23 14:43:42,975 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2025-01-23 14:43:42,975 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: USART
+2025-01-23 14:43:42,975 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: DMA
+2025-01-23 14:43:42,975 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8F0
+2025-01-23 14:43:42,975 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2025-01-23 14:43:42,975 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2025-01-23 14:43:42,975 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2025-01-23 14:43:42,976 [INFO] CodeGenerator:896 - code generatio: config db path: C:\ST\STM32CubeIDE_1.16.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.13.0.202411220809\\db\
+2025-01-23 14:43:43,241 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\MXTmpFiles\license.tmp_save
+2025-01-23 14:43:43,408 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\MXTmpFiles\license.tmp
+2025-01-23 14:43:43,539 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\gpio.c_save
+2025-01-23 14:43:43,689 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\gpio.c
+2025-01-23 14:43:43,722 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\gpio.h_save
+2025-01-23 14:43:43,815 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\gpio.h
+2025-01-23 14:43:44,052 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\dma.c_save
+2025-01-23 14:43:44,163 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\dma.c
+2025-01-23 14:43:44,178 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\dma.h_save
+2025-01-23 14:43:44,281 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\dma.h
+2025-01-23 14:43:44,316 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\tim.c_save
+2025-01-23 14:43:44,464 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\tim.c
+2025-01-23 14:43:44,494 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\tim.h_save
+2025-01-23 14:43:44,600 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\tim.h
+2025-01-23 14:43:44,626 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\usart.c_save
+2025-01-23 14:43:44,755 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\usart.c
+2025-01-23 14:43:44,763 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\usart.h_save
+2025-01-23 14:43:44,845 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\usart.h
+2025-01-23 14:43:44,880 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\stm32f0xx_it.c_save
+2025-01-23 14:43:45,077 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\stm32f0xx_it.c
+2025-01-23 14:43:45,111 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\stm32f0xx_it.h_save
+2025-01-23 14:43:45,207 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\stm32f0xx_it.h
+2025-01-23 14:43:45,244 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\stm32f0xx_hal_msp.c_save
+2025-01-23 14:43:45,341 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\stm32f0xx_hal_msp.c
+2025-01-23 14:43:45,357 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\MXTmpFiles\system.tmp_save
+2025-01-23 14:43:45,420 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\MXTmpFiles\system.tmp
+2025-01-23 14:43:45,455 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\stm32f0xx_hal_conf.h_save
+2025-01-23 14:43:45,557 [INFO] CodeEngine:335 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\stm32f0xx_hal_conf.h
+2025-01-23 14:43:45,619 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\main.h_save
+2025-01-23 14:43:45,724 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\main.h
+2025-01-23 14:43:45,758 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\main.c_save
+2025-01-23 14:43:45,862 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\main.c
+2025-01-23 14:43:45,988 [INFO] ProjectBuilder:3289 - Time for Copy HAL[2] : 0mS.
+2025-01-23 14:43:46,006 [INFO] ProjectBuilder:4876 - Project Generator version: 4.5.0-RC5
+2025-01-23 14:43:46,099 [INFO] ConfigFileManager:1579 - The Die is : DIE445
+2025-01-23 14:43:46,940 [INFO] ProjectBuilder:5154 - Time for Generating toolchain IDE Files: 934mS.
+2025-01-23 14:43:46,946 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 5mS.
+2025-01-23 14:43:46,954 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 4mS.
+2025-01-23 16:23:51,759 [INFO] WebApp:190 - Connection lost
+2025-01-23 16:23:52,318 [INFO] WebApp:187 - Connection restablished
+2025-01-23 16:44:06,265 [INFO] WebApp:190 - Connection lost
+2025-01-23 16:44:06,422 [INFO] WebApp:187 - Connection restablished
+2025-01-23 17:30:56,270 [INFO] WebApp:190 - Connection lost
+2025-01-23 17:30:56,432 [INFO] WebApp:187 - Connection restablished
+2025-01-23 17:41:32,039 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,579x537,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-01-23 17:41:33,267 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-01-23 17:41:44,511 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 531800456 Bytes (1073741824)
+2025-01-23 17:41:45,583 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 550614160 Bytes (1073741824)
+2025-01-23 17:41:46,000 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 612540808 Bytes (1073741824)
+2025-01-23 17:41:46,562 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2025-01-23 17:41:46,562 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: USART
+2025-01-23 17:41:46,562 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: DMA
+2025-01-23 17:41:46,562 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8F0
+2025-01-23 17:41:46,562 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8F0
+2025-01-23 17:41:46,562 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2025-01-23 17:41:46,563 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2025-01-23 17:41:46,563 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2025-01-23 17:41:46,564 [INFO] CodeGenerator:896 - code generatio: config db path: C:\ST\STM32CubeIDE_1.16.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.13.0.202411220809\\db\
+2025-01-23 17:41:46,584 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-01-23 17:41:46,584 [INFO] Argument:327 - 	 sub Args: 
+2025-01-23 17:41:46,585 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Channel5
+2025-01-23 17:41:46,585 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Channel5
+2025-01-23 17:41:46,585 [INFO] Argument:325 - Argument : Initvalue: null
+2025-01-23 17:41:46,585 [INFO] Argument:327 - 	 sub Args: 
+2025-01-23 17:41:46,585 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-01-23 17:41:46,585 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-01-23 17:41:46,585 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-01-23 17:41:46,585 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-01-23 17:41:46,585 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-01-23 17:41:46,585 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-01-23 17:41:46,586 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-01-23 17:41:46,586 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-01-23 17:41:46,586 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-01-23 17:41:46,586 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-01-23 17:41:46,586 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-01-23 17:41:46,586 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-01-23 17:41:46,586 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-01-23 17:41:46,586 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-01-23 17:41:46,586 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-01-23 17:41:46,586 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-01-23 17:41:46,586 [INFO] Argument:325 - Argument : Statevalue: null
+2025-01-23 17:41:46,586 [INFO] Argument:335 - Argument : Statevalue: null
+2025-01-23 17:41:46,587 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-01-23 17:41:46,587 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-01-23 17:41:46,587 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-01-23 17:41:46,587 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-01-23 17:41:46,587 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-01-23 17:41:46,587 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-01-23 17:41:46,587 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-01-23 17:41:46,587 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-01-23 17:41:46,587 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-01-23 17:41:46,587 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-01-23 17:41:46,587 [INFO] Argument:325 - Argument : DMA_Remapvalue: null
+2025-01-23 17:41:46,587 [INFO] Argument:335 - Argument : DMA_Remapvalue: null
+2025-01-23 17:41:46,588 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-01-23 17:41:46,588 [INFO] Argument:327 - 	 sub Args: 
+2025-01-23 17:41:46,588 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Channel4
+2025-01-23 17:41:46,588 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Channel4
+2025-01-23 17:41:46,588 [INFO] Argument:325 - Argument : Initvalue: null
+2025-01-23 17:41:46,588 [INFO] Argument:327 - 	 sub Args: 
+2025-01-23 17:41:46,588 [INFO] Argument:325 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-01-23 17:41:46,588 [INFO] Argument:335 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-01-23 17:41:46,588 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-01-23 17:41:46,589 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-01-23 17:41:46,589 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-01-23 17:41:46,589 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-01-23 17:41:46,589 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-01-23 17:41:46,589 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-01-23 17:41:46,589 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-01-23 17:41:46,589 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-01-23 17:41:46,589 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-01-23 17:41:46,589 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-01-23 17:41:46,590 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-01-23 17:41:46,590 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-01-23 17:41:46,590 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-01-23 17:41:46,590 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-01-23 17:41:46,590 [INFO] Argument:325 - Argument : Statevalue: null
+2025-01-23 17:41:46,590 [INFO] Argument:335 - Argument : Statevalue: null
+2025-01-23 17:41:46,590 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-01-23 17:41:46,590 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-01-23 17:41:46,590 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-01-23 17:41:46,590 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-01-23 17:41:46,590 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-01-23 17:41:46,590 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-01-23 17:41:46,590 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-01-23 17:41:46,590 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-01-23 17:41:46,591 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-01-23 17:41:46,591 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-01-23 17:41:46,591 [INFO] Argument:325 - Argument : DMA_Remapvalue: null
+2025-01-23 17:41:46,591 [INFO] Argument:335 - Argument : DMA_Remapvalue: null
+2025-01-23 17:41:46,993 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\MXTmpFiles\license.tmp_save
+2025-01-23 17:41:47,183 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\MXTmpFiles\license.tmp
+2025-01-23 17:41:47,254 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\gpio.c_save
+2025-01-23 17:41:47,391 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\gpio.c
+2025-01-23 17:41:47,400 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\gpio.h_save
+2025-01-23 17:41:47,524 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\gpio.h
+2025-01-23 17:41:47,814 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\dma.c_save
+2025-01-23 17:41:47,944 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\dma.c
+2025-01-23 17:41:47,967 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\dma.h_save
+2025-01-23 17:41:48,084 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\dma.h
+2025-01-23 17:41:48,113 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\tim.c_save
+2025-01-23 17:41:48,300 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\tim.c
+2025-01-23 17:41:48,322 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\tim.h_save
+2025-01-23 17:41:48,437 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\tim.h
+2025-01-23 17:41:48,464 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\usart.c_save
+2025-01-23 17:41:48,603 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\usart.c
+2025-01-23 17:41:48,609 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\usart.h_save
+2025-01-23 17:41:48,726 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\usart.h
+2025-01-23 17:41:48,757 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\stm32f0xx_it.c_save
+2025-01-23 17:41:48,992 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\stm32f0xx_it.c
+2025-01-23 17:41:49,014 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\stm32f0xx_it.h_save
+2025-01-23 17:41:49,116 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\stm32f0xx_it.h
+2025-01-23 17:41:49,151 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\stm32f0xx_hal_msp.c_save
+2025-01-23 17:41:49,278 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\stm32f0xx_hal_msp.c
+2025-01-23 17:41:49,284 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\MXTmpFiles\system.tmp_save
+2025-01-23 17:41:49,367 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\MXTmpFiles\system.tmp
+2025-01-23 17:41:49,396 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\stm32f0xx_hal_conf.h_save
+2025-01-23 17:41:49,514 [INFO] CodeEngine:335 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\stm32f0xx_hal_conf.h
+2025-01-23 17:41:49,565 [INFO] ApiDbMcu:508 - Load IP Config File for TIM3
+2025-01-23 17:41:49,598 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\main.h_save
+2025-01-23 17:41:49,773 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\main.h
+2025-01-23 17:41:49,800 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\main.c_save
+2025-01-23 17:41:49,923 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\main.c
+2025-01-23 17:41:50,146 [INFO] ProjectBuilder:3289 - Time for Copy HAL[2] : 6mS.
+2025-01-23 17:41:50,158 [INFO] ProjectBuilder:4876 - Project Generator version: 4.5.0-RC5
+2025-01-23 17:41:50,225 [INFO] ConfigFileManager:1579 - The Die is : DIE445
+2025-01-23 17:41:51,120 [INFO] ProjectBuilder:5154 - Time for Generating toolchain IDE Files: 962mS.
+2025-01-23 17:41:51,126 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 6mS.
+2025-01-23 17:41:51,135 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 5mS.
+2025-01-23 17:42:35,423 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,579x537,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-01-23 17:42:41,179 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-01-23 17:42:42,465 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-01-23 17:43:54,220 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-01-23 17:43:55,595 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-01-23 17:43:57,288 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-01-23 18:17:50,786 [INFO] WebApp:190 - Connection lost
+2025-01-23 18:17:50,946 [INFO] WebApp:187 - Connection restablished
+2025-01-23 18:41:34,251 [INFO] WebApp:190 - Connection lost
+2025-01-23 18:41:36,436 [INFO] WebApp:187 - Connection restablished
+2025-01-23 18:46:22,347 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
