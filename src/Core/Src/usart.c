@@ -64,29 +64,48 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
 {
 
   GPIO_InitTypeDef GPIO_InitStruct = {0};
+  RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
   if(uartHandle->Instance==USART2)
   {
   /* USER CODE BEGIN USART2_MspInit 0 */
 
   /* USER CODE END USART2_MspInit 0 */
+
+  /** Initializes the peripherals clock
+  */
+    PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART2;
+    PeriphClkInit.Usart2ClockSelection = RCC_USART2CLKSOURCE_PCLK1;
+    if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
+    {
+      Error_Handler();
+    }
+
     /* USART2 clock enable */
     __HAL_RCC_USART2_CLK_ENABLE();
 
     __HAL_RCC_GPIOA_CLK_ENABLE();
     /**USART2 GPIO Configuration
     PA2     ------> USART2_TX
-    PA15     ------> USART2_RX
+    PA15 (JTDI)     ------> USART2_RX
     */
-    GPIO_InitStruct.Pin = VCP_TX_Pin|VCP_RX_Pin;
+    GPIO_InitStruct.Pin = VCP_TX_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
-    GPIO_InitStruct.Alternate = GPIO_AF1_USART2;
-    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+    GPIO_InitStruct.Alternate = GPIO_AF7_USART2;
+    HAL_GPIO_Init(VCP_TX_GPIO_Port, &GPIO_InitStruct);
+
+    GPIO_InitStruct.Pin = VCP_RX_Pin;
+    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
+    GPIO_InitStruct.Alternate = GPIO_AF3_USART2;
+    HAL_GPIO_Init(VCP_RX_GPIO_Port, &GPIO_InitStruct);
 
     /* USART2 DMA Init */
     /* USART2_RX Init */
-    hdma_usart2_rx.Instance = DMA1_Channel5;
+    hdma_usart2_rx.Instance = DMA1_Channel6;
+    hdma_usart2_rx.Init.Request = DMA_REQUEST_2;
     hdma_usart2_rx.Init.Direction = DMA_PERIPH_TO_MEMORY;
     hdma_usart2_rx.Init.PeriphInc = DMA_PINC_DISABLE;
     hdma_usart2_rx.Init.MemInc = DMA_MINC_ENABLE;
@@ -102,7 +121,8 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
     __HAL_LINKDMA(uartHandle,hdmarx,hdma_usart2_rx);
 
     /* USART2_TX Init */
-    hdma_usart2_tx.Instance = DMA1_Channel4;
+    hdma_usart2_tx.Instance = DMA1_Channel7;
+    hdma_usart2_tx.Init.Request = DMA_REQUEST_2;
     hdma_usart2_tx.Init.Direction = DMA_MEMORY_TO_PERIPH;
     hdma_usart2_tx.Init.PeriphInc = DMA_PINC_DISABLE;
     hdma_usart2_tx.Init.MemInc = DMA_MINC_ENABLE;
@@ -118,7 +138,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
     __HAL_LINKDMA(uartHandle,hdmatx,hdma_usart2_tx);
 
     /* USART2 interrupt Init */
-    HAL_NVIC_SetPriority(USART2_IRQn, 0, 0);
+    HAL_NVIC_SetPriority(USART2_IRQn, 1, 0);
     HAL_NVIC_EnableIRQ(USART2_IRQn);
   /* USER CODE BEGIN USART2_MspInit 1 */
 
@@ -139,7 +159,7 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 
     /**USART2 GPIO Configuration
     PA2     ------> USART2_TX
-    PA15     ------> USART2_RX
+    PA15 (JTDI)     ------> USART2_RX
     */
     HAL_GPIO_DeInit(GPIOA, VCP_TX_Pin|VCP_RX_Pin);
 

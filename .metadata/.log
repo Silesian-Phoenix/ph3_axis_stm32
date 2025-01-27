@@ -1,33 +1,18 @@
-!SESSION 2025-01-22 14:15:20.410 -----------------------------------------------
+!SESSION 2025-01-27 17:08:11.997 -----------------------------------------------
 eclipse.buildId=Version 1.17.0
 java.version=21.0.3
 java.vendor=Eclipse Adoptium
 BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pl_PL
 Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
-!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-01-22 14:15:41.040
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-01-27 17:08:19.789
 !MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
 
-!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-01-22 14:15:41.043
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-01-27 17:08:19.791
 !MESSAGE Log4j2 initialized with config file C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\.metadata\.log4j2.xml
 
-!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-01-22 14:15:53.471
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-01-27 17:08:22.764
 !MESSAGE Started RMI Server, listening on port 41337
 
-!ENTRY org.eclipse.cdt.core 1 0 2025-01-22 14:16:52.013
-!MESSAGE Indexed 'src' (21 sources, 83 headers) in 4.17 sec: 4,875 declarations; 30,102 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0057%)
-!SESSION 2025-01-24 09:46:29.832 -----------------------------------------------
-eclipse.buildId=Version 1.17.0
-java.version=21.0.3
-java.vendor=Eclipse Adoptium
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pl_PL
-Command-line arguments:  -os win32 -ws win32 -arch x86_64
-
-!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-01-24 09:46:49.938
-!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
-
-!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-01-24 09:46:49.941
-!MESSAGE Log4j2 initialized with config file C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\.metadata\.log4j2.xml
-
-!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-01-24 09:46:59.226
-!MESSAGE Started RMI Server, listening on port 41338
+!ENTRY org.eclipse.cdt.core 1 0 2025-01-27 17:09:06.086
+!MESSAGE Indexed 'src' (23 sources, 82 headers) in 2.92 sec: 5,279 declarations; 27,504 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0061%)
