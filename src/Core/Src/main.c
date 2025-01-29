@@ -20,6 +20,7 @@
 #include "main.h"
 #include "dma.h"
 #include "i2c.h"
+#include "tim.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -28,6 +29,7 @@
 
 #include <json.h>
 #include "stdio.h"
+#include "stepper_motor.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -108,6 +110,7 @@ int main(void)
   MX_DMA_Init();
   MX_USART2_UART_Init();
   MX_I2C1_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -119,21 +122,17 @@ int main(void)
   lwjson_my_init();
   HAL_UARTEx_ReceiveToIdle_DMA(&huart2, (uint8_t*)rx_buffer, sizeof(rx_buffer));
 
-  /*ENCODER*/
+  /*ENKODER*/
   HAL_I2C_Mem_Read_DMA(&hi2c1, 0x36 << 1, 0x0B, 1, as5600_data, 3);
+  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
   while (1)
   {
-    // ENCODER_i2c_status = HAL_I2C_Mem_Read(&hi2c1, 0x36 << 1, 0x0B, 1, as5600_data, 3, 100);
-    // ENCODER_data = ((as5600_data[1] << 8) | as5600_data[2]);
-    // ENCODER_current_angle = ENCODER_data * 0.0878;
-    // printf("%f\n", ENCODER_current_angle);
+    // sprawdzenie statusu i czy silnik nie jest na odpowiedniej pozycji
+    if (MOTOR_current_status == MOTOR_ANGLE_RECEIVED) {
+      MOTOR_current_status = MOTOR_IN_MOTION;
+      MOTOR_go_to(MOTOR_current_angle, MOTOR_target_angle);
+    }
 
-    
-    // ENCODER_i2c_status = HAL_I2C_Mem_Read(&hi2c1, 0x36 << 1, 0x0B, 1, as5600_data, 3, 100);
-    // ENCODER_data = ((as5600_data[1] << 8) | as5600_data[2]);
-    // ENCODER_current_angle = ENCODER_data * 0.0878;
-    // HAL_Delay(1000);
-    
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -226,17 +225,17 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {
   }
 }
 
-/*I2C ENCODER CALLBACK*/
+/*ENKODER - zakończenie odbierania danych przez I2C*/
 void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c) {
   if (hi2c == &hi2c1) {
     // obliczenie kąta
     ENCODER_data = ((as5600_data[1] << 8) | as5600_data[2]);
     ENCODER_current_angle = (double)ENCODER_data * 0.0878;
-    printf("%f\n", ENCODER_current_angle);
+    // printf("%f\n", ENCODER_current_angle);
 
+    // sprawdzenie statusu I2C
     if (HAL_I2C_GetState(&hi2c1) == HAL_I2C_STATE_READY) {
-    // Można uruchomić kolejny odczyt przez DMA
-    HAL_I2C_Mem_Read_DMA(&hi2c1, 0x36 << 1, 0x0B, 1, as5600_data, 3);
+      HAL_I2C_Mem_Read_DMA(&hi2c1, 0x36 << 1, 0x0B, 1, as5600_data, 3);
     }
   }
 }
