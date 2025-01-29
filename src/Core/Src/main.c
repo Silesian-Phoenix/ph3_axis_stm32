@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "dma.h"
+#include "i2c.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -26,6 +27,7 @@
 /* USER CODE BEGIN Includes */
 
 #include <json.h>
+#include "stdio.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -46,10 +48,14 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+  uint8_t as5600_data[3];
+  HAL_StatusTypeDef ENCODER_i2c_status;
+  uint16_t ENCODER_data;
+  double ENCODER_current_angle = 0.0;
 
-/*JSON*/
-bool uart2_data_received = false;
-bool uart2_tx_busy = false;
+  /*JSON*/
+  bool uart2_data_received = false;
+  bool uart2_tx_busy = false;
 
 /* USER CODE END PV */
 
@@ -61,7 +67,13 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+int __io_putchar(int ch) {
+  if (ch == '\n') {
+    __io_putchar('\r');
+  }
+  HAL_UART_Transmit(&huart2, (uint8_t*)&ch, 1, HAL_MAX_DELAY);
+  return 0;
+}
 /* USER CODE END 0 */
 
 /**
@@ -95,6 +107,7 @@ int main(void)
   MX_GPIO_Init();
   MX_DMA_Init();
   MX_USART2_UART_Init();
+  MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -102,14 +115,25 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
-
-  
   /*JSON*/
   lwjson_my_init();
   HAL_UARTEx_ReceiveToIdle_DMA(&huart2, (uint8_t*)rx_buffer, sizeof(rx_buffer));
 
+  /*ENCODER*/
+  HAL_I2C_Mem_Read_DMA(&hi2c1, 0x36 << 1, 0x0B, 1, as5600_data, 3);
   while (1)
   {
+    // ENCODER_i2c_status = HAL_I2C_Mem_Read(&hi2c1, 0x36 << 1, 0x0B, 1, as5600_data, 3, 100);
+    // ENCODER_data = ((as5600_data[1] << 8) | as5600_data[2]);
+    // ENCODER_current_angle = ENCODER_data * 0.0878;
+    // printf("%f\n", ENCODER_current_angle);
+
+    
+    // ENCODER_i2c_status = HAL_I2C_Mem_Read(&hi2c1, 0x36 << 1, 0x0B, 1, as5600_data, 3, 100);
+    // ENCODER_data = ((as5600_data[1] << 8) | as5600_data[2]);
+    // ENCODER_current_angle = ENCODER_data * 0.0878;
+    // HAL_Delay(1000);
+    
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -202,6 +226,20 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {
   }
 }
 
+/*I2C ENCODER CALLBACK*/
+void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c) {
+  if (hi2c == &hi2c1) {
+    // obliczenie kąta
+    ENCODER_data = ((as5600_data[1] << 8) | as5600_data[2]);
+    ENCODER_current_angle = (double)ENCODER_data * 0.0878;
+    printf("%f\n", ENCODER_current_angle);
+
+    if (HAL_I2C_GetState(&hi2c1) == HAL_I2C_STATE_READY) {
+    // Można uruchomić kolejny odczyt przez DMA
+    HAL_I2C_Mem_Read_DMA(&hi2c1, 0x36 << 1, 0x0B, 1, as5600_data, 3);
+    }
+  }
+}
 
 /* USER CODE END 4 */
 
