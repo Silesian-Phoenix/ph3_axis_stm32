@@ -14,7 +14,10 @@ void json_process(char *json_str) {
         const lwjson_token_t *token = lwjson_find(&lwjson, "angle");
         if (token) {
         int data = lwjson_get_val_int(token);
+
+        // dane dla silnika
         MOTOR_received_angle = data;
+        MOTOR_target_angle = MOTOR_received_angle;
         MOTOR_current_status = MOTOR_ANGLE_RECEIVED; // zmiana statusu
 
         // ------------------------------------------------------------
@@ -28,3 +31,4 @@ void json_process(char *json_str) {
         }
     }
 }
+

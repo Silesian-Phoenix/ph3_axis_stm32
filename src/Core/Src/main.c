@@ -69,6 +69,8 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+// printf 
 int __io_putchar(int ch) {
   if (ch == '\n') {
     __io_putchar('\r');
@@ -124,14 +126,38 @@ int main(void)
 
   /*ENKODER*/
   HAL_I2C_Mem_Read_DMA(&hi2c1, 0x36 << 1, 0x0B, 1, as5600_data, 3);
-  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
+  
+  // HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
   while (1)
-  {
-    // sprawdzenie statusu i czy silnik nie jest na odpowiedniej pozycji
-    if (MOTOR_current_status == MOTOR_ANGLE_RECEIVED) {
-      MOTOR_current_status = MOTOR_IN_MOTION;
-      MOTOR_go_to(MOTOR_current_angle, MOTOR_target_angle);
+  { 
+    
+    // otrzymano pozycję która wychodzi po za margines błędu obecnej -> zmiana położenia
+    if (MOTOR_current_status == MOTOR_ANGLE_RECEIVED && accept_margin(MOTOR_current_angle, MOTOR_target_angle, MOTOR_PROPER_ANGLE_MARGIN) != 1) {
+      MOTOR_state_machine(MOTOR_current_angle, MOTOR_target_angle, MOTOR_ANGLE_RECEIVED);
     }
+
+    // otrzymano pozycje i obecna miesci sie w zakresie otrzymanej -> nie zmieniamy położenia
+    else if (MOTOR_current_status == MOTOR_ANGLE_RECEIVED && accept_margin(MOTOR_current_angle, MOTOR_target_angle, MOTOR_PROPER_ANGLE_MARGIN)) {
+      MOTOR_state_machine(MOTOR_current_angle, MOTOR_target_angle, MOTOR_ANGLE_RECEIVED);
+    }
+    // silnik w trakcie ustawiania na pozycje
+    else if (MOTOR_current_status == MOTOR_IN_MOTION) {
+      MOTOR_state_machine(MOTOR_current_angle, MOTOR_target_angle, MOTOR_IN_MOTION);
+    }
+
+    else if (MOTOR_current_status == MOTOR_AT_POSITION) {
+      MOTOR_state_machine(MOTOR_current_angle, MOTOR_target_angle, MOTOR_AT_POSITION);
+    }
+
+    // silnik na pozycji i w obrębie marginesu
+    else if (MOTOR_current_status == MOTOR_OUT) {
+      MOTOR_state_machine(MOTOR_current_angle, MOTOR_target_angle, MOTOR_OUT);
+    }
+    
+    /*testowanie silnika*/
+    // HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
+    // HAL_GPIO_WritePin(MOTOR_DIR_GPIO_Port, MOTOR_DIR_Pin, GPIO_PIN_SET);
+    // HAL_GPIO_WritePin(MOTOR_DIR_GPIO_Port, MOTOR_DIR_Pin, GPIO_PIN_RESET);
 
     /* USER CODE END WHILE */
 
@@ -230,7 +256,8 @@ void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c) {
   if (hi2c == &hi2c1) {
     // obliczenie kąta
     ENCODER_data = ((as5600_data[1] << 8) | as5600_data[2]);
-    ENCODER_current_angle = (double)ENCODER_data * 0.0878;
+    ENCODER_current_angle = (double)ENCODER_data * 0.08789;
+    MOTOR_current_angle = ENCODER_current_angle;
     // printf("%f\n", ENCODER_current_angle);
 
     // sprawdzenie statusu I2C
