@@ -21,6 +21,7 @@ void json_process(char *json_str) {
         MOTOR_current_status = MOTOR_ANGLE_RECEIVED; // zmiana statusu
 
         // ------------------------------------------------------------
+        // wysłanie wiadomości zwrotnej
         char buf_to_send[50];
         sprintf(buf_to_send, "json: %s -> %d", json_str, MOTOR_received_angle);
         if (!uart2_tx_busy) {

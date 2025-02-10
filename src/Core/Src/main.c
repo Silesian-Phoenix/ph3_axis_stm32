@@ -39,7 +39,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define NEW(x) 
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -127,10 +127,8 @@ int main(void)
   /*ENKODER*/
   HAL_I2C_Mem_Read_DMA(&hi2c1, 0x36 << 1, 0x0B, 1, as5600_data, 3);
   
-  // HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
   while (1)
   { 
-    
     // otrzymano pozycję która wychodzi po za margines błędu obecnej -> zmiana położenia
     if (MOTOR_current_status == MOTOR_ANGLE_RECEIVED && accept_margin(MOTOR_current_angle, MOTOR_target_angle, MOTOR_PROPER_ANGLE_MARGIN) != 1) {
       MOTOR_state_machine(MOTOR_current_angle, MOTOR_target_angle, MOTOR_ANGLE_RECEIVED);
@@ -140,11 +138,13 @@ int main(void)
     else if (MOTOR_current_status == MOTOR_ANGLE_RECEIVED && accept_margin(MOTOR_current_angle, MOTOR_target_angle, MOTOR_PROPER_ANGLE_MARGIN)) {
       MOTOR_state_machine(MOTOR_current_angle, MOTOR_target_angle, MOTOR_ANGLE_RECEIVED);
     }
+    
     // silnik w trakcie ustawiania na pozycje
     else if (MOTOR_current_status == MOTOR_IN_MOTION) {
       MOTOR_state_machine(MOTOR_current_angle, MOTOR_target_angle, MOTOR_IN_MOTION);
     }
 
+    // silnik na pozycji
     else if (MOTOR_current_status == MOTOR_AT_POSITION) {
       MOTOR_state_machine(MOTOR_current_angle, MOTOR_target_angle, MOTOR_AT_POSITION);
     }
@@ -257,7 +257,7 @@ void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c) {
     // obliczenie kąta
     ENCODER_data = ((as5600_data[1] << 8) | as5600_data[2]);
     ENCODER_current_angle = (double)ENCODER_data * 0.08789;
-    MOTOR_current_angle = ENCODER_current_angle;
+    MOTOR_current_angle = NEW(ENCODER_current_angle);
     // printf("%f\n", ENCODER_current_angle);
 
     // sprawdzenie statusu I2C

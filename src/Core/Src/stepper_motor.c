@@ -38,6 +38,10 @@ int accept_margin(uint16_t current_angle, uint16_t target_angle, double acceptab
 }
 
 MOTOR_Direction MOTOR_choice_direction(uint16_t current_angle, uint16_t target_angle) {
+    // 270 - 90
+    
+    
+    
     if (current_angle <= 0 && current_angle >= 360 && target_angle <= 0 && target_angle >= 360) {
         return DIR_FAULT;
     }
@@ -46,26 +50,26 @@ MOTOR_Direction MOTOR_choice_direction(uint16_t current_angle, uint16_t target_a
     if (current_angle < 180) {
         int antipodal_point = current_angle + 180;
         if (antipodal_point == target_angle) {
-        return DIR_FAULT;
-    }
+            return DIR_FAULT;
+        }
 
         if (current_angle < 90) {
             if (target_angle > current_angle && target_angle < antipodal_point) {
-            return DIR_RIGHT;
+                return DIR_RIGHT;
             }
             else {
-            return DIR_LEFT;
+                return DIR_LEFT;
             }
         }
 
         // 91-180
         else if (current_angle < 180) {
-        if (target_angle > current_angle && target_angle < antipodal_point) {
-            return DIR_LEFT;
-        }
-        else {
-            return DIR_RIGHT;
-        }
+            if (target_angle > current_angle && target_angle < antipodal_point) {
+                return DIR_LEFT;
+            }
+            else {
+                return DIR_RIGHT;
+            }
         }
     }
 
@@ -76,24 +80,25 @@ MOTOR_Direction MOTOR_choice_direction(uint16_t current_angle, uint16_t target_a
         }
         // 181-270
         if (current_angle < 270) {
-        if (target_angle < current_angle && target_angle > antipodal_point) {
-            return DIR_RIGHT;
-        }
-        else {
-            return DIR_LEFT;
-        }
+            if (target_angle < current_angle && target_angle > antipodal_point) {
+                return DIR_RIGHT;
+            }
+            else {
+                return DIR_LEFT;
+            }
         }
 
         // 271-360
         else {
-        if (target_angle < current_angle && target_angle > antipodal_point) {
-            return DIR_LEFT;
-        }
-        else {
-            return DIR_RIGHT;
-        }
+            if (target_angle < current_angle && target_angle > antipodal_point) {
+                return DIR_LEFT;
+            }
+            else {
+                return DIR_RIGHT;
+            }
         }
     }
+
 }
 
 // narazie obort o zadany kąt
@@ -106,6 +111,12 @@ MOTOR_Direction MOTOR_choice_direction(uint16_t current_angle, uint16_t target_a
 
 void MOTOR_state_machine(uint16_t current_angle, uint16_t target_angle, uint8_t state) {
     switch (state) {
+        // stan przypisujacy 
+
+        // dążenie do 0*
+        case MOTOR_IDLE:
+            MOTOR_current_status = MOTOR_ANGLE_RECEIVED;
+            break;
         case MOTOR_ANGLE_RECEIVED:
             // ustawienie kierunku obrotu
             MOTOR_current_dir = MOTOR_choice_direction(current_angle, target_angle);
@@ -117,7 +128,7 @@ void MOTOR_state_machine(uint16_t current_angle, uint16_t target_angle, uint8_t 
             MOTOR_rot = true;
             HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
             break;
-        
+
         case MOTOR_IN_MOTION:
             // jesli silnik dotarl gdzie mial
             if (accept_margin(current_angle, target_angle, MOTOR_PROPER_ANGLE_MARGIN)) {
@@ -134,7 +145,6 @@ void MOTOR_state_machine(uint16_t current_angle, uint16_t target_angle, uint8_t 
             }
             break;
         case MOTOR_OUT:
-
             // ustawienie kierunku obrotu
             MOTOR_current_dir = MOTOR_choice_direction(current_angle, target_angle);
             if (MOTOR_current_dir != DIR_FAULT) {

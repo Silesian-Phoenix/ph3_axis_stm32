@@ -3,9 +3,11 @@
 #include "main.h"
 #include "stdbool.h"
 
-#define MOTOR_PROPER_ANGLE_MARGIN 1.7 // bo krok 1.8
-// #define MOTOR_PROPER_ANGLE_MARGIN (360.0 / 256.0)
+#define MOTOR_PROPER_ANGLE_MARGIN 0.89
 
+// 0.225
+// #define MOTOR_PROPER_ANGLE_MARGIN (360.0 / 256.0)
+ 
 typedef enum {  
     MOTOR_IDLE, // stan po resecie
     MOTOR_ANGLE_RECEIVED, // otzymano kąt
