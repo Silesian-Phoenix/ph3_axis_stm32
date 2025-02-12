@@ -20,6 +20,8 @@ void json_process(char *json_str) {
         MOTOR_target_angle = MOTOR_received_angle;
         MOTOR_current_status = MOTOR_ANGLE_RECEIVED; // zmiana statusu
 
+        // TO DO: odrzucenie danych poza zakresem
+
         // ------------------------------------------------------------
         // wysłanie wiadomości zwrotnej
         char buf_to_send[50];

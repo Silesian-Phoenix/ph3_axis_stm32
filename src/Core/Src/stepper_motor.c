@@ -3,7 +3,7 @@
 
 MOTOR_Status MOTOR_current_status = MOTOR_IDLE;
 MOTOR_Direction MOTOR_current_dir = DIR_RIGHT;
-uint16_t MOTOR_current_angle = 0;
+double MOTOR_current_angle = 0;
 uint16_t MOTOR_received_angle = 0;
 uint16_t MOTOR_target_angle = 0;
 uint16_t MOTOR_step = 0;
@@ -38,9 +38,37 @@ int accept_margin(uint16_t current_angle, uint16_t target_angle, double acceptab
 }
 
 MOTOR_Direction MOTOR_choice_direction(uint16_t current_angle, uint16_t target_angle) {
-    // 270 - 90
+    // TO DO: warunek z zakresem
     
-    
+    if (current_angle <= MAX_RIGHT && target_angle <= MAX_RIGHT) {
+        if (current_angle < target_angle) {
+            return DIR_RIGHT;
+        }
+        else {
+            return DIR_LEFT;
+        }
+    }
+    else if (current_angle <= MAX_RIGHT && target_angle >= MAX_LEFT) {
+        if (current_angle < target_angle) {
+            return DIR_LEFT;
+        }
+    }
+    if (current_angle >= MAX_LEFT && target_angle <= MAX_RIGHT) {
+        if (current_angle > target_angle) {
+            return DIR_RIGHT;
+        }
+    }
+    else if (current_angle >= MAX_LEFT && target_angle >= MAX_LEFT) {
+        if (current_angle < target_angle) {
+            return DIR_RIGHT;
+        }
+        else {
+            return DIR_LEFT;
+        }
+    }
+
+
+    /*
     
     if (current_angle <= 0 && current_angle >= 360 && target_angle <= 0 && target_angle >= 360) {
         return DIR_FAULT;
@@ -98,7 +126,7 @@ MOTOR_Direction MOTOR_choice_direction(uint16_t current_angle, uint16_t target_a
             }
         }
     }
-
+    */
 }
 
 // narazie obort o zadany kąt

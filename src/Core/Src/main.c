@@ -30,6 +30,7 @@
 #include <json.h>
 #include "stdio.h"
 #include "stepper_motor.h"
+#include "stdbool.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -54,7 +55,9 @@
   HAL_StatusTypeDef ENCODER_i2c_status;
   uint16_t ENCODER_data;
   double ENCODER_current_angle = 0.0;
-
+  uint16_t ENCODER_recal_data;
+  bool ENCODER_init = false;
+  uint16_t ENCODER_offset = 0;
   /*JSON*/
   bool uart2_data_received = false;
   bool uart2_tx_busy = false;
@@ -129,6 +132,20 @@ int main(void)
   
   while (1)
   { 
+    // TO DO: sprawdzenie czy magens wykryty
+    // jesli 5 bit to 0 -> silnik nie jest wykrywany
+    /*
+    001000 detected
+    001000 &
+    001000 -> negacja 0
+    */
+    
+    if ((as5600_data[0] & (1<<5)) == 0) {
+      HAL_TIM_PWM_Stop(&htim2, TIM_CHANNEL_2);
+    }
+    
+    // TO DO: zatrzymanie jeśli magenes po za zakresem
+
     // otrzymano pozycję która wychodzi po za margines błędu obecnej -> zmiana położenia
     if (MOTOR_current_status == MOTOR_ANGLE_RECEIVED && accept_margin(MOTOR_current_angle, MOTOR_target_angle, MOTOR_PROPER_ANGLE_MARGIN) != 1) {
       MOTOR_state_machine(MOTOR_current_angle, MOTOR_target_angle, MOTOR_ANGLE_RECEIVED);
@@ -255,10 +272,19 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {
 void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c) {
   if (hi2c == &hi2c1) {
     // obliczenie kąta
-    ENCODER_data = ((as5600_data[1] << 8) | as5600_data[2]);
-    ENCODER_current_angle = (double)ENCODER_data * 0.08789;
-    MOTOR_current_angle = NEW(ENCODER_current_angle);
-    // printf("%f\n", ENCODER_current_angle);
+    ENCODER_data = ((as5600_data[1] << 8) | as5600_data[2]); // poskładanie danych z enkodera
+    if (ENCODER_init == false) {
+      ENCODER_offset = ENCODER_data; // zapisanie offsetu
+      printf("ENCODER offset: %d", ENCODER_offset);
+      ENCODER_init = true;
+    }
+    else {
+      ENCODER_recal_data = (ENCODER_data - ENCODER_offset + 4095) % 4095;
+      ENCODER_current_angle = (double)ENCODER_recal_data * 0.08789;
+      MOTOR_current_angle = ENCODER_current_angle;
+    }
+    
+    // printf("recal: %d offset: %d data: %d angle: %f\n", ENCODER_recal_data, ENCODER_offset, ENCODER_data, ENCODER_current_angle);
 
     // sprawdzenie statusu I2C
     if (HAL_I2C_GetState(&hi2c1) == HAL_I2C_STATE_READY) {

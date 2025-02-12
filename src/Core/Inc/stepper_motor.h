@@ -5,6 +5,9 @@
 
 #define MOTOR_PROPER_ANGLE_MARGIN 0.89
 
+#define MAX_LEFT 260
+#define MAX_RIGHT 100
+
 // 0.225
 // #define MOTOR_PROPER_ANGLE_MARGIN (360.0 / 256.0)
  
@@ -30,7 +33,7 @@ int accept_margin(uint16_t current_angle, uint16_t target_angle, double acceptab
 extern MOTOR_Status MOTOR_current_status;
 extern MOTOR_Direction MOTOR_current_dir;
 extern bool MOTOR_rot;
-extern uint16_t MOTOR_current_angle;
+extern double MOTOR_current_angle;
 extern uint16_t MOTOR_received_angle;
 extern uint16_t MOTOR_target_angle;
 extern uint16_t MOTOR_step;
