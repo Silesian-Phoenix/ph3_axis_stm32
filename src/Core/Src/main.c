@@ -31,6 +31,8 @@
 #include "stdio.h"
 #include "stepper_motor.h"
 #include "stdbool.h"
+#include "string.h"
+#include "ee.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -40,7 +42,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define NEW(x) 
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -61,7 +63,14 @@
   /*JSON*/
   bool uart2_data_received = false;
   bool uart2_tx_busy = false;
+  
 
+
+  typedef struct {
+    uint16_t v1;
+  } eeStorage_t;
+
+  eeStorage_t ee;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -128,7 +137,15 @@ int main(void)
   HAL_UARTEx_ReceiveToIdle_DMA(&huart2, (uint8_t*)rx_buffer, sizeof(rx_buffer));
 
   /*ENKODER*/
-  HAL_I2C_Mem_Read_DMA(&hi2c1, 0x36 << 1, 0x0B, 1, as5600_data, 3);
+  HAL_I2C_Mem_Read_IT(&hi2c1, 0x36 << 1, 0x0B, 1, as5600_data, 3);
+
+  EE_Init(&ee, sizeof(eeStorage_t)); 
+
+  /*
+    EE_Init(&ee, sizeof(eeStorage_t)); 
+  ee.v1 = 323;
+  EE_Write();
+  */
   
   while (1)
   { 
@@ -137,7 +154,7 @@ int main(void)
     /*
     001000 detected
     001000 &
-    001000 -> negacja 0
+    001000 -> negacja 06
     */
     
     if ((as5600_data[0] & (1<<5)) == 0) {
@@ -248,17 +265,22 @@ void SystemClock_Config(void)
 
 /*ODBIERANIE DANYCH W PRZERWANIU*/
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size) {
-
-  /*JSON*/
   if (huart == &huart2) {
-      rx_buffer[Size] = '\0';
+      if (Size < sizeof(rx_buffer)) {
+          rx_buffer[Size] = '\0';
+      } else {
+          rx_buffer[sizeof(rx_buffer) - 1] = '\0';
+      }
+
       uart2_data_received = true;
 
       if (uart2_data_received) {
-        json_process(rx_buffer);
+        memcpy(rx_buffer_copy, rx_buffer, Size);
+        json_process(rx_buffer_copy);
         uart2_data_received = false;
       }
-    HAL_UARTEx_ReceiveToIdle_DMA(&huart2, (uint8_t*)rx_buffer, sizeof(rx_buffer));
+
+      HAL_UARTEx_ReceiveToIdle_IT(&huart2, (uint8_t*)rx_buffer, sizeof(rx_buffer));
   }
 }
 
@@ -275,7 +297,7 @@ void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c) {
     ENCODER_data = ((as5600_data[1] << 8) | as5600_data[2]); // poskładanie danych z enkodera
     if (ENCODER_init == false) {
       ENCODER_offset = ENCODER_data; // zapisanie offsetu
-      printf("ENCODER offset: %d", ENCODER_offset);
+      // printf("ENCODER offset: %d", ENCODER_offset);
       ENCODER_init = true;
     }
     else {
