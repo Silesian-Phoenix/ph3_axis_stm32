@@ -42,6 +42,7 @@ extern "C" {
 /* Exported constants --------------------------------------------------------*/
 /* USER CODE BEGIN EC */
 extern bool uart2_tx_busy;
+extern bool ENCODER_init;
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/

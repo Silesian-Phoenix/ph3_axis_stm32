@@ -3,11 +3,11 @@
 #include "main.h"
 #include "lwjson.h"
 
-#define JSON_BUFFER_MAX 60
+#define JSON_BUFFER_MAX 100
 
 char rx_buffer[JSON_BUFFER_MAX];
 char rx_buffer_copy[JSON_BUFFER_MAX];
-lwjson_token_t tokens[2];
+lwjson_token_t tokens[4];
 lwjson_t lwjson;
 
 void lwjson_my_init();

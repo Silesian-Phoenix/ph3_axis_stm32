@@ -42,7 +42,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define AS5600_BUF_SIZE 3
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -53,18 +53,24 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-  uint8_t as5600_data[3];
+
+  /*enkoder*/
+  uint8_t as5600_buf[3];
+  uint8_t ENCODER_buf[3];
   HAL_StatusTypeDef ENCODER_i2c_status;
   uint16_t ENCODER_data;
   double ENCODER_current_angle = 0.0;
   uint16_t ENCODER_recal_data;
-  bool ENCODER_init = false;
   uint16_t ENCODER_offset = 0;
+
+  bool ENCODER_init = false;
+  bool i2c_data_to_calc = false;
+
   /*JSON*/
   bool uart2_data_received = false;
   bool uart2_tx_busy = false;
-  
 
+  bool zero_to_set = false;
 
   typedef struct {
     uint16_t v1;
@@ -134,38 +140,56 @@ int main(void)
 
   /*JSON*/
   lwjson_my_init();
-  HAL_UARTEx_ReceiveToIdle_DMA(&huart2, (uint8_t*)rx_buffer, sizeof(rx_buffer));
+  HAL_UARTEx_ReceiveToIdle_IT(&huart2, (uint8_t*)rx_buffer, sizeof(rx_buffer));
 
   /*ENKODER*/
-  HAL_I2C_Mem_Read_IT(&hi2c1, 0x36 << 1, 0x0B, 1, as5600_data, 3);
+  HAL_I2C_Mem_Read_DMA(&hi2c1, 0x36 << 1, 0x0B, 1, as5600_buf, 3);
 
   EE_Init(&ee, sizeof(eeStorage_t)); 
 
   /*
-    EE_Init(&ee, sizeof(eeStorage_t)); 
+  EE_Init(&ee, sizeof(eeStorage_t)); 
   ee.v1 = 323;
   EE_Write();
   */
   
   while (1)
   { 
-    // TO DO: sprawdzenie czy magens wykryty
-    // jesli 5 bit to 0 -> silnik nie jest wykrywany
-    /*
-    001000 detected
-    001000 &
-    001000 -> negacja 06
-    */
-    
-    if ((as5600_data[0] & (1<<5)) == 0) {
+    // Przetworzenie danych z enkodera
+    // if (i2c_data_to_calc) {
+    //   // obliczenie kąta
+    //   ENCODER_data = ((ENCODER_buf[1] << 8) | ENCODER_buf[2]); // poskładanie danych z enkodera
+    //   if (ENCODER_init == false) {
+    //     ENCODER_offset = ENCODER_data; // zapisanie offsetu
+    //     // printf("ENCODER offset: %d", ENCODER_offset);
+    //     ENCODER_init = true;
+    //   }
+    //   else {
+    //     ENCODER_recal_data = (ENCODER_data - ENCODER_offset + 4095) % 4095;
+    //     ENCODER_current_angle = (double)ENCODER_recal_data * 0.08789;
+    //     MOTOR_current_angle = ENCODER_current_angle;
+    //   }
+    //   i2c_data_to_calc = false;
+    // }
+
+    // if (zero_to_set) {
+
+    // }
+
+    if ((as5600_buf[0] & (1<<5)) == 0) {
       HAL_TIM_PWM_Stop(&htim2, TIM_CHANNEL_2);
     }
     
-    // TO DO: zatrzymanie jeśli magenes po za zakresem
-
     // otrzymano pozycję która wychodzi po za margines błędu obecnej -> zmiana położenia
     if (MOTOR_current_status == MOTOR_ANGLE_RECEIVED && accept_margin(MOTOR_current_angle, MOTOR_target_angle, MOTOR_PROPER_ANGLE_MARGIN) != 1) {
       MOTOR_state_machine(MOTOR_current_angle, MOTOR_target_angle, MOTOR_ANGLE_RECEIVED);
+
+      char buf_to_send[50];
+      sprintf(buf_to_send, "angle: %d", MOTOR_target_angle);
+      if (!uart2_tx_busy) {
+          HAL_UART_Transmit_DMA(&huart2, (uint8_t*)buf_to_send, strlen(buf_to_send));
+          uart2_tx_busy = true;
+      }
     }
 
     // otrzymano pozycje i obecna miesci sie w zakresie otrzymanej -> nie zmieniamy położenia
@@ -232,7 +256,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_MSI;
   RCC_OscInitStruct.PLL.PLLM = 1;
-  RCC_OscInitStruct.PLL.PLLN = 24;
+  RCC_OscInitStruct.PLL.PLLN = 40;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV7;
   RCC_OscInitStruct.PLL.PLLQ = RCC_PLLQ_DIV2;
   RCC_OscInitStruct.PLL.PLLR = RCC_PLLR_DIV2;
@@ -250,7 +274,7 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_4) != HAL_OK)
   {
     Error_Handler();
   }
@@ -265,22 +289,16 @@ void SystemClock_Config(void)
 
 /*ODBIERANIE DANYCH W PRZERWANIU*/
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size) {
+  /*JSON*/
   if (huart == &huart2) {
-      if (Size < sizeof(rx_buffer)) {
-          rx_buffer[Size] = '\0';
-      } else {
-          rx_buffer[sizeof(rx_buffer) - 1] = '\0';
-      }
-
+      rx_buffer[Size] = '\0';
       uart2_data_received = true;
 
       if (uart2_data_received) {
-        memcpy(rx_buffer_copy, rx_buffer, Size);
-        json_process(rx_buffer_copy);
+        json_process(rx_buffer);
         uart2_data_received = false;
       }
-
-      HAL_UARTEx_ReceiveToIdle_IT(&huart2, (uint8_t*)rx_buffer, sizeof(rx_buffer));
+    HAL_UARTEx_ReceiveToIdle_DMA(&huart2, (uint8_t*)rx_buffer, sizeof(rx_buffer));
   }
 }
 
@@ -291,10 +309,24 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) {
 }
 
 /*ENKODER - zakończenie odbierania danych przez I2C*/
+
+/*
+void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c) {
+  if (hi2c == &hi2c1) {
+    i2c_data_to_calc = true;
+    memcpy(ENCODER_buf, as5600_buf, AS5600_BUF_SIZE);
+    // sprawdzenie statusu I2C
+    if (HAL_I2C_GetState(&hi2c1) == HAL_I2C_STATE_READY) {
+      HAL_I2C_Mem_Read_DMA(&hi2c1, 0x36 << 1, 0x0B, 1, as5600_buf, 3);
+    }
+  }
+}
+*/
+
 void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c) {
   if (hi2c == &hi2c1) {
     // obliczenie kąta
-    ENCODER_data = ((as5600_data[1] << 8) | as5600_data[2]); // poskładanie danych z enkodera
+    ENCODER_data = ((as5600_buf[1] << 8) | as5600_buf[2]); // poskładanie danych z enkodera
     if (ENCODER_init == false) {
       ENCODER_offset = ENCODER_data; // zapisanie offsetu
       // printf("ENCODER offset: %d", ENCODER_offset);
@@ -310,7 +342,7 @@ void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c) {
 
     // sprawdzenie statusu I2C
     if (HAL_I2C_GetState(&hi2c1) == HAL_I2C_STATE_READY) {
-      HAL_I2C_Mem_Read_DMA(&hi2c1, 0x36 << 1, 0x0B, 1, as5600_data, 3);
+      HAL_I2C_Mem_Read_DMA(&hi2c1, 0x36 << 1, 0x0B, 1, as5600_buf, 3);
     }
   }
 }
