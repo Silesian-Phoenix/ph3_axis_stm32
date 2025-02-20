@@ -41,7 +41,7 @@ MOTOR_Direction MOTOR_choice_direction(uint16_t current_angle, uint16_t target_a
     // TO DO: warunek z zakresem
     
     if (current_angle <= MAX_RIGHT && target_angle <= MAX_RIGHT) {
-        if (current_angle < target_angle) {
+        if (current_angle > target_angle) {
             return DIR_RIGHT;
         }
         else {
@@ -50,16 +50,16 @@ MOTOR_Direction MOTOR_choice_direction(uint16_t current_angle, uint16_t target_a
     }
     else if (current_angle <= MAX_RIGHT && target_angle >= MAX_LEFT) {
         if (current_angle < target_angle) {
-            return DIR_LEFT;
+            return DIR_RIGHT;
         }
     }
     if (current_angle >= MAX_LEFT && target_angle <= MAX_RIGHT) {
         if (current_angle > target_angle) {
-            return DIR_RIGHT;
+            return DIR_LEFT;
         }
     }
     else if (current_angle >= MAX_LEFT && target_angle >= MAX_LEFT) {
-        if (current_angle < target_angle) {
+        if (current_angle > target_angle) {
             return DIR_RIGHT;
         }
         else {

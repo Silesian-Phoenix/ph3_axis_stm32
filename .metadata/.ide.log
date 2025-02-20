@@ -4003,3 +4003,454 @@
 2025-02-20 11:03:03,197 [INFO] ProjectBuilder:5154 - Time for Generating toolchain IDE Files: 4722mS.
 2025-02-20 11:03:03,208 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 9mS.
 2025-02-20 11:03:03,216 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 2mS.
+2025-02-20 12:25:28,640 [INFO] I2cTimingTraitement:330 - 0x10D19CE4
+2025-02-20 12:25:29,222 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-02-20 12:25:30,787 [INFO] I2cTimingTraitement:330 - 0x10D19CE4
+2025-02-20 12:25:30,997 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-02-20 13:42:17,430 [INFO] WebApp:190 - Connection lost
+2025-02-20 13:42:17,681 [INFO] WebApp:187 - Connection restablished
+2025-02-20 13:49:41,655 [INFO] I2cTimingTraitement:330 - 0x10D19CE4
+2025-02-20 13:49:41,917 [INFO] I2cTimingTraitement:330 - 0x10D19CE4
+2025-02-20 13:49:42,035 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-02-20 13:52:23,565 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 613377352 Bytes (1044381696)
+2025-02-20 13:52:24,817 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 628579656 Bytes (1044381696)
+2025-02-20 13:52:28,549 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 757036080 Bytes (1044381696)
+2025-02-20 13:52:28,827 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2025-02-20 13:52:28,828 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: USART
+2025-02-20 13:52:28,828 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: DMA
+2025-02-20 13:52:28,828 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8L4
+2025-02-20 13:52:28,828 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2025-02-20 13:52:28,829 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2025-02-20 13:52:28,829 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2025-02-20 13:52:28,829 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: I2C
+2025-02-20 13:52:28,863 [INFO] CodeGenerator:896 - code generatio: config db path: C:\ST\STM32CubeIDE_1.16.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.13.0.202411220809\\db\
+2025-02-20 13:52:28,868 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-02-20 13:52:28,868 [INFO] Argument:327 - 	 sub Args: 
+2025-02-20 13:52:28,868 [INFO] Argument:325 - Argument : Instancevalue: DMA2_Channel6
+2025-02-20 13:52:28,869 [INFO] Argument:335 - Argument : Instancevalue: DMA2_Channel6
+2025-02-20 13:52:28,869 [INFO] Argument:325 - Argument : Initvalue: null
+2025-02-20 13:52:28,869 [INFO] Argument:327 - 	 sub Args: 
+2025-02-20 13:52:28,869 [INFO] Argument:325 - Argument : Requestvalue: DMA_REQUEST_5
+2025-02-20 13:52:28,869 [INFO] Argument:335 - Argument : Requestvalue: DMA_REQUEST_5
+2025-02-20 13:52:28,869 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-02-20 13:52:28,869 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-02-20 13:52:28,870 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-02-20 13:52:28,870 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-02-20 13:52:28,870 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-02-20 13:52:28,870 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-02-20 13:52:28,870 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-02-20 13:52:28,870 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-02-20 13:52:28,870 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-02-20 13:52:28,870 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-02-20 13:52:28,870 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-02-20 13:52:28,870 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-02-20 13:52:28,870 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-02-20 13:52:28,870 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-02-20 13:52:28,871 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-02-20 13:52:28,871 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-02-20 13:52:28,871 [INFO] Argument:325 - Argument : Statevalue: null
+2025-02-20 13:52:28,871 [INFO] Argument:335 - Argument : Statevalue: null
+2025-02-20 13:52:28,871 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-02-20 13:52:28,872 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-02-20 13:52:28,872 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-02-20 13:52:28,872 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-02-20 13:52:28,872 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-02-20 13:52:28,872 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-02-20 13:52:28,872 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-02-20 13:52:28,872 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-02-20 13:52:28,872 [INFO] Argument:325 - Argument : XferAbortCallbackvalue: null
+2025-02-20 13:52:28,872 [INFO] Argument:335 - Argument : XferAbortCallbackvalue: null
+2025-02-20 13:52:28,872 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-02-20 13:52:28,872 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-02-20 13:52:28,872 [INFO] Argument:325 - Argument : DmaBaseAddressvalue: null
+2025-02-20 13:52:28,873 [INFO] Argument:335 - Argument : DmaBaseAddressvalue: null
+2025-02-20 13:52:28,873 [INFO] Argument:325 - Argument : ChannelIndexvalue: null
+2025-02-20 13:52:28,873 [INFO] Argument:335 - Argument : ChannelIndexvalue: null
+2025-02-20 13:52:28,873 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-02-20 13:52:28,873 [INFO] Argument:327 - 	 sub Args: 
+2025-02-20 13:52:28,873 [INFO] Argument:325 - Argument : Instancevalue: DMA2_Channel6
+2025-02-20 13:52:28,874 [INFO] Argument:335 - Argument : Instancevalue: DMA2_Channel6
+2025-02-20 13:52:28,874 [INFO] Argument:325 - Argument : Initvalue: null
+2025-02-20 13:52:28,874 [INFO] Argument:327 - 	 sub Args: 
+2025-02-20 13:52:28,874 [INFO] Argument:325 - Argument : Requestvalue: DMA_REQUEST_5
+2025-02-20 13:52:28,874 [INFO] Argument:335 - Argument : Requestvalue: DMA_REQUEST_5
+2025-02-20 13:52:28,874 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-02-20 13:52:28,874 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-02-20 13:52:28,874 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-02-20 13:52:28,874 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-02-20 13:52:28,874 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-02-20 13:52:28,874 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-02-20 13:52:28,875 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-02-20 13:52:28,875 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-02-20 13:52:28,875 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-02-20 13:52:28,875 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-02-20 13:52:28,875 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-02-20 13:52:28,875 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-02-20 13:52:28,875 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-02-20 13:52:28,875 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-02-20 13:52:28,875 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-02-20 13:52:28,875 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-02-20 13:52:28,875 [INFO] Argument:325 - Argument : Statevalue: null
+2025-02-20 13:52:28,875 [INFO] Argument:335 - Argument : Statevalue: null
+2025-02-20 13:52:28,875 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-02-20 13:52:28,876 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-02-20 13:52:28,876 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-02-20 13:52:28,876 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-02-20 13:52:28,876 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-02-20 13:52:28,876 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-02-20 13:52:28,876 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-02-20 13:52:28,876 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-02-20 13:52:28,876 [INFO] Argument:325 - Argument : XferAbortCallbackvalue: null
+2025-02-20 13:52:28,876 [INFO] Argument:335 - Argument : XferAbortCallbackvalue: null
+2025-02-20 13:52:28,876 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-02-20 13:52:28,876 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-02-20 13:52:28,876 [INFO] Argument:325 - Argument : DmaBaseAddressvalue: null
+2025-02-20 13:52:28,876 [INFO] Argument:335 - Argument : DmaBaseAddressvalue: null
+2025-02-20 13:52:28,876 [INFO] Argument:325 - Argument : ChannelIndexvalue: null
+2025-02-20 13:52:28,877 [INFO] Argument:335 - Argument : ChannelIndexvalue: null
+2025-02-20 13:52:28,877 [INFO] Argument:325 - Argument : pSyncConfigvalue: null
+2025-02-20 13:52:28,877 [INFO] Argument:327 - 	 sub Args: 
+2025-02-20 13:52:28,877 [INFO] Argument:325 - Argument : SyncSignalIDvalue: null
+2025-02-20 13:52:28,877 [INFO] Argument:335 - Argument : SyncSignalIDvalue: null
+2025-02-20 13:52:28,877 [INFO] Argument:325 - Argument : SyncPolarityvalue: null
+2025-02-20 13:52:28,877 [INFO] Argument:335 - Argument : SyncPolarityvalue: null
+2025-02-20 13:52:28,877 [INFO] Argument:325 - Argument : SyncEnablevalue: null
+2025-02-20 13:52:28,877 [INFO] Argument:335 - Argument : SyncEnablevalue: null
+2025-02-20 13:52:28,877 [INFO] Argument:325 - Argument : EventEnablevalue: null
+2025-02-20 13:52:28,877 [INFO] Argument:335 - Argument : EventEnablevalue: null
+2025-02-20 13:52:28,878 [INFO] Argument:325 - Argument : RequestNumbervalue: null
+2025-02-20 13:52:28,878 [INFO] Argument:335 - Argument : RequestNumbervalue: null
+2025-02-20 13:52:28,879 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-02-20 13:52:28,879 [INFO] Argument:327 - 	 sub Args: 
+2025-02-20 13:52:28,879 [INFO] Argument:325 - Argument : Instancevalue: DMA2_Channel7
+2025-02-20 13:52:28,879 [INFO] Argument:335 - Argument : Instancevalue: DMA2_Channel7
+2025-02-20 13:52:28,879 [INFO] Argument:325 - Argument : Initvalue: null
+2025-02-20 13:52:28,879 [INFO] Argument:327 - 	 sub Args: 
+2025-02-20 13:52:28,879 [INFO] Argument:325 - Argument : Requestvalue: DMA_REQUEST_5
+2025-02-20 13:52:28,879 [INFO] Argument:335 - Argument : Requestvalue: DMA_REQUEST_5
+2025-02-20 13:52:28,880 [INFO] Argument:325 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-02-20 13:52:28,880 [INFO] Argument:335 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-02-20 13:52:28,880 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-02-20 13:52:28,880 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-02-20 13:52:28,880 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-02-20 13:52:28,880 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-02-20 13:52:28,880 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-02-20 13:52:28,880 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-02-20 13:52:28,880 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-02-20 13:52:28,880 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-02-20 13:52:28,880 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-02-20 13:52:28,880 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-02-20 13:52:28,880 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-02-20 13:52:28,881 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-02-20 13:52:28,881 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-02-20 13:52:28,881 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-02-20 13:52:28,881 [INFO] Argument:325 - Argument : Statevalue: null
+2025-02-20 13:52:28,881 [INFO] Argument:335 - Argument : Statevalue: null
+2025-02-20 13:52:28,881 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-02-20 13:52:28,881 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-02-20 13:52:28,881 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-02-20 13:52:28,881 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-02-20 13:52:28,881 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-02-20 13:52:28,881 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-02-20 13:52:28,881 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-02-20 13:52:28,881 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-02-20 13:52:28,881 [INFO] Argument:325 - Argument : XferAbortCallbackvalue: null
+2025-02-20 13:52:28,882 [INFO] Argument:335 - Argument : XferAbortCallbackvalue: null
+2025-02-20 13:52:28,882 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-02-20 13:52:28,882 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-02-20 13:52:28,882 [INFO] Argument:325 - Argument : DmaBaseAddressvalue: null
+2025-02-20 13:52:28,882 [INFO] Argument:335 - Argument : DmaBaseAddressvalue: null
+2025-02-20 13:52:28,882 [INFO] Argument:325 - Argument : ChannelIndexvalue: null
+2025-02-20 13:52:28,882 [INFO] Argument:335 - Argument : ChannelIndexvalue: null
+2025-02-20 13:52:28,882 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-02-20 13:52:28,882 [INFO] Argument:327 - 	 sub Args: 
+2025-02-20 13:52:28,882 [INFO] Argument:325 - Argument : Instancevalue: DMA2_Channel7
+2025-02-20 13:52:28,882 [INFO] Argument:335 - Argument : Instancevalue: DMA2_Channel7
+2025-02-20 13:52:28,883 [INFO] Argument:325 - Argument : Initvalue: null
+2025-02-20 13:52:28,883 [INFO] Argument:327 - 	 sub Args: 
+2025-02-20 13:52:28,883 [INFO] Argument:325 - Argument : Requestvalue: DMA_REQUEST_5
+2025-02-20 13:52:28,883 [INFO] Argument:335 - Argument : Requestvalue: DMA_REQUEST_5
+2025-02-20 13:52:28,883 [INFO] Argument:325 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-02-20 13:52:28,883 [INFO] Argument:335 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-02-20 13:52:28,883 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-02-20 13:52:28,883 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-02-20 13:52:28,883 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-02-20 13:52:28,883 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-02-20 13:52:28,883 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-02-20 13:52:28,884 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-02-20 13:52:28,884 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-02-20 13:52:28,884 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-02-20 13:52:28,884 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-02-20 13:52:28,884 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-02-20 13:52:28,884 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-02-20 13:52:28,884 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-02-20 13:52:28,884 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-02-20 13:52:28,884 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-02-20 13:52:28,884 [INFO] Argument:325 - Argument : Statevalue: null
+2025-02-20 13:52:28,884 [INFO] Argument:335 - Argument : Statevalue: null
+2025-02-20 13:52:28,884 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-02-20 13:52:28,885 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-02-20 13:52:28,885 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-02-20 13:52:28,885 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-02-20 13:52:28,885 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-02-20 13:52:28,885 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-02-20 13:52:28,885 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-02-20 13:52:28,885 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-02-20 13:52:28,885 [INFO] Argument:325 - Argument : XferAbortCallbackvalue: null
+2025-02-20 13:52:28,885 [INFO] Argument:335 - Argument : XferAbortCallbackvalue: null
+2025-02-20 13:52:28,885 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-02-20 13:52:28,886 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-02-20 13:52:28,886 [INFO] Argument:325 - Argument : DmaBaseAddressvalue: null
+2025-02-20 13:52:28,886 [INFO] Argument:335 - Argument : DmaBaseAddressvalue: null
+2025-02-20 13:52:28,886 [INFO] Argument:325 - Argument : ChannelIndexvalue: null
+2025-02-20 13:52:28,886 [INFO] Argument:335 - Argument : ChannelIndexvalue: null
+2025-02-20 13:52:28,886 [INFO] Argument:325 - Argument : pSyncConfigvalue: null
+2025-02-20 13:52:28,886 [INFO] Argument:327 - 	 sub Args: 
+2025-02-20 13:52:28,886 [INFO] Argument:325 - Argument : SyncSignalIDvalue: null
+2025-02-20 13:52:28,886 [INFO] Argument:335 - Argument : SyncSignalIDvalue: null
+2025-02-20 13:52:28,886 [INFO] Argument:325 - Argument : SyncPolarityvalue: null
+2025-02-20 13:52:28,887 [INFO] Argument:335 - Argument : SyncPolarityvalue: null
+2025-02-20 13:52:28,887 [INFO] Argument:325 - Argument : SyncEnablevalue: null
+2025-02-20 13:52:28,887 [INFO] Argument:335 - Argument : SyncEnablevalue: null
+2025-02-20 13:52:28,887 [INFO] Argument:325 - Argument : EventEnablevalue: null
+2025-02-20 13:52:28,887 [INFO] Argument:335 - Argument : EventEnablevalue: null
+2025-02-20 13:52:28,887 [INFO] Argument:325 - Argument : RequestNumbervalue: null
+2025-02-20 13:52:28,887 [INFO] Argument:335 - Argument : RequestNumbervalue: null
+2025-02-20 13:52:28,905 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-02-20 13:52:28,906 [INFO] Argument:327 - 	 sub Args: 
+2025-02-20 13:52:28,906 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Channel6
+2025-02-20 13:52:28,906 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Channel6
+2025-02-20 13:52:28,906 [INFO] Argument:325 - Argument : Initvalue: null
+2025-02-20 13:52:28,906 [INFO] Argument:327 - 	 sub Args: 
+2025-02-20 13:52:28,906 [INFO] Argument:325 - Argument : Requestvalue: DMA_REQUEST_2
+2025-02-20 13:52:28,906 [INFO] Argument:335 - Argument : Requestvalue: DMA_REQUEST_2
+2025-02-20 13:52:28,906 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-02-20 13:52:28,906 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-02-20 13:52:28,906 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-02-20 13:52:28,906 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-02-20 13:52:28,907 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-02-20 13:52:28,907 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-02-20 13:52:28,907 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-02-20 13:52:28,907 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-02-20 13:52:28,907 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-02-20 13:52:28,907 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-02-20 13:52:28,907 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-02-20 13:52:28,907 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-02-20 13:52:28,907 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-02-20 13:52:28,907 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-02-20 13:52:28,907 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-02-20 13:52:28,907 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-02-20 13:52:28,907 [INFO] Argument:325 - Argument : Statevalue: null
+2025-02-20 13:52:28,907 [INFO] Argument:335 - Argument : Statevalue: null
+2025-02-20 13:52:28,908 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-02-20 13:52:28,908 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-02-20 13:52:28,908 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-02-20 13:52:28,908 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-02-20 13:52:28,908 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-02-20 13:52:28,908 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-02-20 13:52:28,908 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-02-20 13:52:28,908 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-02-20 13:52:28,908 [INFO] Argument:325 - Argument : XferAbortCallbackvalue: null
+2025-02-20 13:52:28,908 [INFO] Argument:335 - Argument : XferAbortCallbackvalue: null
+2025-02-20 13:52:28,908 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-02-20 13:52:28,908 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-02-20 13:52:28,908 [INFO] Argument:325 - Argument : DmaBaseAddressvalue: null
+2025-02-20 13:52:28,908 [INFO] Argument:335 - Argument : DmaBaseAddressvalue: null
+2025-02-20 13:52:28,909 [INFO] Argument:325 - Argument : ChannelIndexvalue: null
+2025-02-20 13:52:28,909 [INFO] Argument:335 - Argument : ChannelIndexvalue: null
+2025-02-20 13:52:28,909 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-02-20 13:52:28,909 [INFO] Argument:327 - 	 sub Args: 
+2025-02-20 13:52:28,909 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Channel6
+2025-02-20 13:52:28,909 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Channel6
+2025-02-20 13:52:28,909 [INFO] Argument:325 - Argument : Initvalue: null
+2025-02-20 13:52:28,909 [INFO] Argument:327 - 	 sub Args: 
+2025-02-20 13:52:28,909 [INFO] Argument:325 - Argument : Requestvalue: DMA_REQUEST_2
+2025-02-20 13:52:28,909 [INFO] Argument:335 - Argument : Requestvalue: DMA_REQUEST_2
+2025-02-20 13:52:28,909 [INFO] Argument:325 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-02-20 13:52:28,909 [INFO] Argument:335 - Argument : Directionvalue: DMA_PERIPH_TO_MEMORY
+2025-02-20 13:52:28,909 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-02-20 13:52:28,910 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-02-20 13:52:28,910 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-02-20 13:52:28,910 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-02-20 13:52:28,910 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-02-20 13:52:28,910 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-02-20 13:52:28,910 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-02-20 13:52:28,910 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-02-20 13:52:28,910 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-02-20 13:52:28,910 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-02-20 13:52:28,910 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-02-20 13:52:28,910 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-02-20 13:52:28,910 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-02-20 13:52:28,910 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-02-20 13:52:28,911 [INFO] Argument:325 - Argument : Statevalue: null
+2025-02-20 13:52:28,911 [INFO] Argument:335 - Argument : Statevalue: null
+2025-02-20 13:52:28,911 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-02-20 13:52:28,911 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-02-20 13:52:28,911 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-02-20 13:52:28,911 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-02-20 13:52:28,911 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-02-20 13:52:28,911 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-02-20 13:52:28,911 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-02-20 13:52:28,911 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-02-20 13:52:28,911 [INFO] Argument:325 - Argument : XferAbortCallbackvalue: null
+2025-02-20 13:52:28,911 [INFO] Argument:335 - Argument : XferAbortCallbackvalue: null
+2025-02-20 13:52:28,911 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-02-20 13:52:28,911 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-02-20 13:52:28,912 [INFO] Argument:325 - Argument : DmaBaseAddressvalue: null
+2025-02-20 13:52:28,912 [INFO] Argument:335 - Argument : DmaBaseAddressvalue: null
+2025-02-20 13:52:28,912 [INFO] Argument:325 - Argument : ChannelIndexvalue: null
+2025-02-20 13:52:28,912 [INFO] Argument:335 - Argument : ChannelIndexvalue: null
+2025-02-20 13:52:28,912 [INFO] Argument:325 - Argument : pSyncConfigvalue: null
+2025-02-20 13:52:28,912 [INFO] Argument:327 - 	 sub Args: 
+2025-02-20 13:52:28,912 [INFO] Argument:325 - Argument : SyncSignalIDvalue: null
+2025-02-20 13:52:28,912 [INFO] Argument:335 - Argument : SyncSignalIDvalue: null
+2025-02-20 13:52:28,912 [INFO] Argument:325 - Argument : SyncPolarityvalue: null
+2025-02-20 13:52:28,912 [INFO] Argument:335 - Argument : SyncPolarityvalue: null
+2025-02-20 13:52:28,912 [INFO] Argument:325 - Argument : SyncEnablevalue: null
+2025-02-20 13:52:28,912 [INFO] Argument:335 - Argument : SyncEnablevalue: null
+2025-02-20 13:52:28,913 [INFO] Argument:325 - Argument : EventEnablevalue: null
+2025-02-20 13:52:28,913 [INFO] Argument:335 - Argument : EventEnablevalue: null
+2025-02-20 13:52:28,913 [INFO] Argument:325 - Argument : RequestNumbervalue: null
+2025-02-20 13:52:28,913 [INFO] Argument:335 - Argument : RequestNumbervalue: null
+2025-02-20 13:52:28,913 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-02-20 13:52:28,914 [INFO] Argument:327 - 	 sub Args: 
+2025-02-20 13:52:28,914 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Channel7
+2025-02-20 13:52:28,914 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Channel7
+2025-02-20 13:52:28,914 [INFO] Argument:325 - Argument : Initvalue: null
+2025-02-20 13:52:28,914 [INFO] Argument:327 - 	 sub Args: 
+2025-02-20 13:52:28,914 [INFO] Argument:325 - Argument : Requestvalue: DMA_REQUEST_2
+2025-02-20 13:52:28,914 [INFO] Argument:335 - Argument : Requestvalue: DMA_REQUEST_2
+2025-02-20 13:52:28,914 [INFO] Argument:325 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-02-20 13:52:28,914 [INFO] Argument:335 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-02-20 13:52:28,914 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-02-20 13:52:28,914 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-02-20 13:52:28,914 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-02-20 13:52:28,914 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-02-20 13:52:28,915 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-02-20 13:52:28,915 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-02-20 13:52:28,915 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-02-20 13:52:28,915 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-02-20 13:52:28,915 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-02-20 13:52:28,915 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-02-20 13:52:28,915 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-02-20 13:52:28,915 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-02-20 13:52:28,915 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-02-20 13:52:28,915 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-02-20 13:52:28,915 [INFO] Argument:325 - Argument : Statevalue: null
+2025-02-20 13:52:28,915 [INFO] Argument:335 - Argument : Statevalue: null
+2025-02-20 13:52:28,915 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-02-20 13:52:28,915 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-02-20 13:52:28,915 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-02-20 13:52:28,915 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-02-20 13:52:28,915 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-02-20 13:52:28,916 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-02-20 13:52:28,916 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-02-20 13:52:28,916 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-02-20 13:52:28,916 [INFO] Argument:325 - Argument : XferAbortCallbackvalue: null
+2025-02-20 13:52:28,916 [INFO] Argument:335 - Argument : XferAbortCallbackvalue: null
+2025-02-20 13:52:28,916 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-02-20 13:52:28,916 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-02-20 13:52:28,916 [INFO] Argument:325 - Argument : DmaBaseAddressvalue: null
+2025-02-20 13:52:28,916 [INFO] Argument:335 - Argument : DmaBaseAddressvalue: null
+2025-02-20 13:52:28,916 [INFO] Argument:325 - Argument : ChannelIndexvalue: null
+2025-02-20 13:52:28,916 [INFO] Argument:335 - Argument : ChannelIndexvalue: null
+2025-02-20 13:52:28,916 [INFO] Argument:325 - Argument : hdmavalue: null
+2025-02-20 13:52:28,916 [INFO] Argument:327 - 	 sub Args: 
+2025-02-20 13:52:28,916 [INFO] Argument:325 - Argument : Instancevalue: DMA1_Channel7
+2025-02-20 13:52:28,916 [INFO] Argument:335 - Argument : Instancevalue: DMA1_Channel7
+2025-02-20 13:52:28,916 [INFO] Argument:325 - Argument : Initvalue: null
+2025-02-20 13:52:28,916 [INFO] Argument:327 - 	 sub Args: 
+2025-02-20 13:52:28,916 [INFO] Argument:325 - Argument : Requestvalue: DMA_REQUEST_2
+2025-02-20 13:52:28,917 [INFO] Argument:335 - Argument : Requestvalue: DMA_REQUEST_2
+2025-02-20 13:52:28,917 [INFO] Argument:325 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-02-20 13:52:28,917 [INFO] Argument:335 - Argument : Directionvalue: DMA_MEMORY_TO_PERIPH
+2025-02-20 13:52:28,917 [INFO] Argument:325 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-02-20 13:52:28,917 [INFO] Argument:335 - Argument : PeriphIncvalue: DMA_PINC_DISABLE
+2025-02-20 13:52:28,917 [INFO] Argument:325 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-02-20 13:52:28,917 [INFO] Argument:335 - Argument : MemIncvalue: DMA_MINC_ENABLE
+2025-02-20 13:52:28,917 [INFO] Argument:325 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-02-20 13:52:28,917 [INFO] Argument:335 - Argument : PeriphDataAlignmentvalue: DMA_PDATAALIGN_BYTE
+2025-02-20 13:52:28,917 [INFO] Argument:325 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-02-20 13:52:28,917 [INFO] Argument:335 - Argument : MemDataAlignmentvalue: DMA_MDATAALIGN_BYTE
+2025-02-20 13:52:28,917 [INFO] Argument:325 - Argument : Modevalue: DMA_NORMAL
+2025-02-20 13:52:28,917 [INFO] Argument:335 - Argument : Modevalue: DMA_NORMAL
+2025-02-20 13:52:28,917 [INFO] Argument:325 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-02-20 13:52:28,918 [INFO] Argument:335 - Argument : Priorityvalue: DMA_PRIORITY_LOW
+2025-02-20 13:52:28,918 [INFO] Argument:325 - Argument : Lockvalue: null
+2025-02-20 13:52:28,918 [INFO] Argument:335 - Argument : Lockvalue: null
+2025-02-20 13:52:28,918 [INFO] Argument:325 - Argument : Statevalue: null
+2025-02-20 13:52:28,918 [INFO] Argument:335 - Argument : Statevalue: null
+2025-02-20 13:52:28,918 [INFO] Argument:325 - Argument : Parentvalue: null
+2025-02-20 13:52:28,918 [INFO] Argument:335 - Argument : Parentvalue: null
+2025-02-20 13:52:28,918 [INFO] Argument:325 - Argument : XferCpltCallbackvalue: null
+2025-02-20 13:52:28,918 [INFO] Argument:335 - Argument : XferCpltCallbackvalue: null
+2025-02-20 13:52:28,918 [INFO] Argument:325 - Argument : XferHalfCpltCallbackvalue: null
+2025-02-20 13:52:28,918 [INFO] Argument:335 - Argument : XferHalfCpltCallbackvalue: null
+2025-02-20 13:52:28,918 [INFO] Argument:325 - Argument : XferErrorCallbackvalue: null
+2025-02-20 13:52:28,918 [INFO] Argument:335 - Argument : XferErrorCallbackvalue: null
+2025-02-20 13:52:28,918 [INFO] Argument:325 - Argument : XferAbortCallbackvalue: null
+2025-02-20 13:52:28,919 [INFO] Argument:335 - Argument : XferAbortCallbackvalue: null
+2025-02-20 13:52:28,919 [INFO] Argument:325 - Argument : ErrorCodevalue: null
+2025-02-20 13:52:28,919 [INFO] Argument:335 - Argument : ErrorCodevalue: null
+2025-02-20 13:52:28,919 [INFO] Argument:325 - Argument : DmaBaseAddressvalue: null
+2025-02-20 13:52:28,919 [INFO] Argument:335 - Argument : DmaBaseAddressvalue: null
+2025-02-20 13:52:28,919 [INFO] Argument:325 - Argument : ChannelIndexvalue: null
+2025-02-20 13:52:28,919 [INFO] Argument:335 - Argument : ChannelIndexvalue: null
+2025-02-20 13:52:28,919 [INFO] Argument:325 - Argument : pSyncConfigvalue: null
+2025-02-20 13:52:28,919 [INFO] Argument:327 - 	 sub Args: 
+2025-02-20 13:52:28,919 [INFO] Argument:325 - Argument : SyncSignalIDvalue: null
+2025-02-20 13:52:28,919 [INFO] Argument:335 - Argument : SyncSignalIDvalue: null
+2025-02-20 13:52:28,920 [INFO] Argument:325 - Argument : SyncPolarityvalue: null
+2025-02-20 13:52:28,920 [INFO] Argument:335 - Argument : SyncPolarityvalue: null
+2025-02-20 13:52:28,920 [INFO] Argument:325 - Argument : SyncEnablevalue: null
+2025-02-20 13:52:28,920 [INFO] Argument:335 - Argument : SyncEnablevalue: null
+2025-02-20 13:52:28,920 [INFO] Argument:325 - Argument : EventEnablevalue: null
+2025-02-20 13:52:28,920 [INFO] Argument:335 - Argument : EventEnablevalue: null
+2025-02-20 13:52:28,920 [INFO] Argument:325 - Argument : RequestNumbervalue: null
+2025-02-20 13:52:28,920 [INFO] Argument:335 - Argument : RequestNumbervalue: null
+2025-02-20 13:52:29,050 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\MXTmpFiles\license.tmp_save
+2025-02-20 13:52:29,458 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\MXTmpFiles\license.tmp
+2025-02-20 13:52:29,606 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\gpio.c_save
+2025-02-20 13:52:29,885 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\gpio.c
+2025-02-20 13:52:29,914 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\gpio.h_save
+2025-02-20 13:52:30,084 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\gpio.h
+2025-02-20 13:52:31,250 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\dma.c_save
+2025-02-20 13:52:31,371 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\dma.c
+2025-02-20 13:52:31,401 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\dma.h_save
+2025-02-20 13:52:31,544 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\dma.h
+2025-02-20 13:52:31,627 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\i2c.c_save
+2025-02-20 13:52:31,886 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\i2c.c
+2025-02-20 13:52:31,917 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\i2c.h_save
+2025-02-20 13:52:32,049 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\i2c.h
+2025-02-20 13:52:32,157 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\tim.c_save
+2025-02-20 13:52:32,370 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\tim.c
+2025-02-20 13:52:32,384 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\tim.h_save
+2025-02-20 13:52:32,530 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\tim.h
+2025-02-20 13:52:32,579 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\usart.c_save
+2025-02-20 13:52:32,770 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\usart.c
+2025-02-20 13:52:32,784 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\usart.h_save
+2025-02-20 13:52:32,911 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\usart.h
+2025-02-20 13:52:32,979 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\stm32l4xx_it.c_save
+2025-02-20 13:52:33,341 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\stm32l4xx_it.c
+2025-02-20 13:52:33,373 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\stm32l4xx_it.h_save
+2025-02-20 13:52:33,523 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\stm32l4xx_it.h
+2025-02-20 13:52:33,594 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\stm32l4xx_hal_msp.c_save
+2025-02-20 13:52:33,769 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\stm32l4xx_hal_msp.c
+2025-02-20 13:52:33,808 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\MXTmpFiles\system.tmp_save
+2025-02-20 13:52:33,902 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\MXTmpFiles\system.tmp
+2025-02-20 13:52:33,933 [INFO] CodeEngine:311 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\stm32l4xx_hal_conf.h_save
+2025-02-20 13:52:34,076 [INFO] CodeEngine:335 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\stm32l4xx_hal_conf.h
+2025-02-20 13:52:34,188 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\main.h_save
+2025-02-20 13:52:34,443 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Inc\main.h
+2025-02-20 13:52:34,504 [INFO] CodeEngine:255 - oldGeneratedFile, C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\main.c_save
+2025-02-20 13:52:34,645 [INFO] CodeEngine:279 - Generated code: C:\Users\maria\OneDrive\Dokumenty\GitHub\ph3_axis_stm32\src\Core\Src\main.c
+2025-02-20 13:52:35,034 [INFO] ProjectBuilder:3289 - Time for Copy HAL[2] : 10mS.
+2025-02-20 13:52:35,049 [INFO] ProjectBuilder:4876 - Project Generator version: 4.5.0-RC5
+2025-02-20 13:52:35,165 [INFO] ConfigFileManager:1579 - The Die is : DIE435
+2025-02-20 13:52:36,797 [INFO] ProjectBuilder:5154 - Time for Generating toolchain IDE Files: 1748mS.
+2025-02-20 13:52:36,804 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 7mS.
+2025-02-20 13:52:36,820 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 5mS.
+2025-02-20 14:19:22,786 [INFO] WebApp:190 - Connection lost
+2025-02-20 14:19:22,992 [INFO] WebApp:187 - Connection restablished
+2025-02-20 17:41:38,278 [INFO] WebApp:190 - Connection lost
+2025-02-20 17:42:58,044 [INFO] WebApp:187 - Connection restablished
