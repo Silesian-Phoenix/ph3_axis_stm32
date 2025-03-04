@@ -5,12 +5,12 @@
 
 #define MOTOR_PROPER_ANGLE_MARGIN 0.89
 
-#define MAX_LEFT 260
-#define MAX_RIGHT 100
+#define MAX_LEFT 359
+#define MAX_RIGHT 0
 
 // 0.225
 // #define MOTOR_PROPER_ANGLE_MARGIN (360.0 / 256.0)
- 
+
 typedef enum {  
     MOTOR_IDLE, // stan po resecie
     MOTOR_ANGLE_RECEIVED, // otzymano kąt
@@ -20,8 +20,8 @@ typedef enum {
 } MOTOR_Status;
 
 typedef enum {
-    DIR_RIGHT, // FROM THE TOP 
-    DIR_LEFT,
+    DIR_CW, // zgodnie z zegarem
+    DIR_CCW, // przeciwko
     DIR_FAULT
 } MOTOR_Direction; 
 

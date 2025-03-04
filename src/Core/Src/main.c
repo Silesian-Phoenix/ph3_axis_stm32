@@ -150,31 +150,33 @@ int main(void)
   while (1)
   { 
     if ((as5600_buf[0] & (1<<5)) == 0) {
+      HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, GPIO_PIN_SET);
       HAL_TIM_PWM_Stop(&htim2, TIM_CHANNEL_2);
     }
+    else {
+      HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, GPIO_PIN_RESET);
+    }
 
-    /*
     if (data_to_send) {
       char buf_to_send[50];
-      sprintf(buf_to_send, "angle: %d", MOTOR_current_angle);
+      sprintf(buf_to_send, "angle: %.2f", MOTOR_current_angle);
       if (!uart2_tx_busy) {
           HAL_UART_Transmit_DMA(&huart2, (uint8_t*)buf_to_send, strlen(buf_to_send));
           uart2_tx_busy = true;
       }
       data_to_send = false;
     }
-    */
-    
+  
     // otrzymano pozycję która wychodzi po za margines błędu obecnej -> zmiana położenia
     if (MOTOR_current_status == MOTOR_ANGLE_RECEIVED && accept_margin(MOTOR_current_angle, MOTOR_target_angle, MOTOR_PROPER_ANGLE_MARGIN) != 1) {
       MOTOR_state_machine(MOTOR_current_angle, MOTOR_target_angle, MOTOR_ANGLE_RECEIVED);
 
-      char buf_to_send[50];
-      sprintf(buf_to_send, "angle: %d", MOTOR_target_angle);
-      if (!uart2_tx_busy) {
-          HAL_UART_Transmit_DMA(&huart2, (uint8_t*)buf_to_send, strlen(buf_to_send));
-          uart2_tx_busy = true;
-      }
+      // char buf_to_send[50];
+      // sprintf(buf_to_send, "angle: %d", MOTOR_target_angle);
+      // if (!uart2_tx_busy) {
+      //     HAL_UART_Transmit_DMA(&huart2, (uint8_t*)buf_to_send, strlen(buf_to_send));
+      //     uart2_tx_busy = true;
+      // }
     }
 
     // otrzymano pozycje i obecna miesci sie w zakresie otrzymanej -> nie zmieniamy położenia
@@ -306,6 +308,7 @@ void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c) {
       EE_Write();
       ENCODER_init = true;
       eeprom_data_to_read = false;
+      MOTOR_target_angle = 0;
     }
     else {
       if (eeprom_data_to_read) {
@@ -326,8 +329,6 @@ void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c) {
     }
   }
 }
-
-
 
 // wersja bez zapisy do eeprom
 // void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c) {

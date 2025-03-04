@@ -43,6 +43,7 @@ extern "C" {
 /* USER CODE BEGIN EC */
 extern bool uart2_tx_busy;
 extern bool ENCODER_init;
+extern bool data_to_send;
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/
