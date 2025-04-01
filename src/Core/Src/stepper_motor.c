@@ -19,10 +19,10 @@ Funkcja sprawdzająca czy pozycja silnika jest w zakresie marginesu błędu
 
 void MOTOR_set_direction(MOTOR_Direction dir) {
     if (dir == DIR_CW) {
-        HAL_GPIO_WritePin(MOTOR_DIR_GPIO_Port, MOTOR_DIR_Pin, GPIO_PIN_SET);
+        HAL_GPIO_WritePin(MOTOR_DIR_GPIO_Port, MOTOR_DIR_Pin, GPIO_PIN_RESET);
     }
     else if (dir == DIR_CCW) {
-        HAL_GPIO_WritePin(MOTOR_DIR_GPIO_Port, MOTOR_DIR_Pin, GPIO_PIN_RESET);
+        HAL_GPIO_WritePin(MOTOR_DIR_GPIO_Port, MOTOR_DIR_Pin, GPIO_PIN_SET);
     }
 }
 
