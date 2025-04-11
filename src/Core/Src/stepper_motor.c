@@ -121,12 +121,13 @@ void MOTOR_state_machine(uint16_t current_angle, uint16_t target_angle, uint8_t 
             if (MOTOR_current_dir != DIR_FAULT) {
                 MOTOR_set_direction(MOTOR_current_dir);
             }
+            HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
             MOTOR_current_status = MOTOR_IN_MOTION;
             MOTOR_rot = true;
             break;
 
         case MOTOR_IN_MOTION:
-            HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
+            
             // jesli silnik dotarl gdzie mial
             if (accept_margin(current_angle, target_angle, MOTOR_PROPER_ANGLE_MARGIN)) {
                 MOTOR_current_status = MOTOR_AT_POSITION;
