@@ -68,12 +68,19 @@
   bool eeprom_data_to_read = true;
 
   /*JSON*/
+  // bool motor_to_stop = false;
+
   bool uart2_data_received = false;
   bool uart2_tx_busy = false;
   bool data_to_send = false;
 
+  bool addr_to_send = false;
+  bool addr_to_set = false;
+  int received_addr = 0;
+
   typedef struct {
     uint16_t EE_offset;
+    uint16_t addr;
   } eeStorage_t;
 
   eeStorage_t ee;
@@ -146,20 +153,44 @@ int main(void)
   HAL_I2C_Mem_Read_DMA(&hi2c1, 0x36 << 1, 0x0B, 1, as5600_buf, 3);
   
   EE_Init(&ee, sizeof(eeStorage_t)); 
-
   while (1)
   { 
     if ((as5600_buf[0] & (1<<5)) == 0) {
       HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, GPIO_PIN_SET);
-      HAL_TIM_PWM_Stop(&htim2, TIM_CHANNEL_2);
+      // HAL_TIM_PWM_Stop(&htim2, TIM_CHANNEL_2);
     }
     else {
       HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, GPIO_PIN_RESET);
     }
 
+    // // stop
+    // if (motor_to_stop) {
+    //   HAL_TIM_PWM_Stop(&htim2, TIM_CHANNEL_2);
+    //   motor_to_stop = false;
+    // }
+
+    // setAdr
+    if (addr_to_set) {
+      ee.addr = received_addr;
+      EE_Write();
+      addr_to_set = false;
+    }
+
+    // getAdr
+    if (addr_to_send) {
+      EE_Read();
+      char buf_to_send[50];
+      sprintf(buf_to_send, "addr: %d\r\n", ee.addr);
+      if (!uart2_tx_busy) {
+          HAL_UART_Transmit_DMA(&huart2, (uint8_t*)buf_to_send, strlen(buf_to_send));
+          uart2_tx_busy = true;
+      }
+      addr_to_send = false;
+    }
+
     if (data_to_send) {
       char buf_to_send[50];
-      sprintf(buf_to_send, "angle: %.2f", MOTOR_current_angle);
+      sprintf(buf_to_send, "angle: %.2f\r\n", MOTOR_current_angle);
       if (!uart2_tx_busy) {
           HAL_UART_Transmit_DMA(&huart2, (uint8_t*)buf_to_send, strlen(buf_to_send));
           uart2_tx_busy = true;
@@ -198,13 +229,6 @@ int main(void)
     else if (MOTOR_current_status == MOTOR_OUT) {
       MOTOR_state_machine(MOTOR_current_angle, MOTOR_target_angle, MOTOR_OUT);
     }
-    
-    
-    /*testowanie silnika*/
-    // HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
-    // HAL_GPIO_WritePin(MOTOR_DIR_GPIO_Port, MOTOR_DIR_Pin, GPIO_PIN_SET);
-    // HAL_GPIO_WritePin(MOTOR_DIR_GPIO_Port, MOTOR_DIR_Pin, GPIO_PIN_RESET);
-
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -328,28 +352,15 @@ void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c) {
       HAL_I2C_Mem_Read_DMA(&hi2c1, 0x36 << 1, 0x0B, 1, as5600_buf, 3);
     }
   }
+
+  // printowanie offsetu
+  // char buf_to_send[50];
+  // sprintf(buf_to_send, "offset: %d\r\n", ENCODER_offset);
+  // if (!uart2_tx_busy) {
+  //     HAL_UART_Transmit_DMA(&huart2, (uint8_t*)buf_to_send, strlen(buf_to_send));
+  //     uart2_tx_busy = true;
+  // }
 }
-
-// wersja bez zapisy do eeprom
-// void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c) {
-//   if (hi2c == &hi2c1) {
-//     // obliczenie kąta
-//     ENCODER_data = ((as5600_buf[1] << 8) | as5600_buf[2]); // poskładanie danych z enkodera
-//     if (ENCODER_init == false) {
-//       ENCODER_offset = ENCODER_data; // zapisanie offsetu
-//       ENCODER_init = true;
-//     } else {
-//       ENCODER_recal_data = (ENCODER_data - ENCODER_offset + 4095) % 4095;
-//       ENCODER_current_angle = (double)ENCODER_recal_data * 0.08789;
-//       MOTOR_current_angle = ENCODER_current_angle;
-//     }
-
-//     // sprawdzenie statusu I2C
-//     if (HAL_I2C_GetState(&hi2c1) == HAL_I2C_STATE_READY) {
-//       HAL_I2C_Mem_Read_DMA(&hi2c1, 0x36 << 1, 0x0B, 1, as5600_buf, 3);
-//     }
-//   }
-// }
 
 
 /* USER CODE END 4 */

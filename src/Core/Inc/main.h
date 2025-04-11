@@ -44,6 +44,10 @@ extern "C" {
 extern bool uart2_tx_busy;
 extern bool ENCODER_init;
 extern bool data_to_send;
+
+extern bool addr_to_send;
+extern bool addr_to_set;
+extern int received_addr;
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/

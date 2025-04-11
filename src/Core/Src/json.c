@@ -13,7 +13,10 @@ void json_process(char *json_str) {
     if (lwjson_parse(&lwjson, (char*)json_str) == lwjsonOK) {
         const lwjson_token_t *token1 = lwjson_find(&lwjson, "angle");
         const lwjson_token_t *token2 = lwjson_find(&lwjson, "setZero");
-        const lwjson_token_t *token3 = lwjson_find(&lwjson, "returnAngle");
+        const lwjson_token_t *token3 = lwjson_find(&lwjson, "getAngle");
+        const lwjson_token_t *token5 = lwjson_find(&lwjson, "setAddr");
+        const lwjson_token_t *token6 = lwjson_find(&lwjson, "getAddr");
+
 
         if (token1 != NULL) {
             int data = lwjson_get_val_int(token1);
