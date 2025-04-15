@@ -15,6 +15,10 @@ void json_process(char *json_str) {
         const lwjson_token_t *token2 = lwjson_find(&lwjson, "setZero");
         const lwjson_token_t *token3 = lwjson_find(&lwjson, "returnAngle");
 
+        const lwjson_token_t *token6 = lwjson_find(&lwjson, "setAddr");
+        const lwjson_token_t *token7 = lwjson_find(&lwjson, "getAddr");
+
+
         if (token1 != NULL) {
             int data = lwjson_get_val_int(token1);
 
@@ -37,6 +41,27 @@ void json_process(char *json_str) {
                 data_to_send = true;
             }
         }
+
+
+                // setAddr
+                else if (token6 != NULL) {
+                    int data = lwjson_get_val_int(token6);
+                    if (data >= 0) {
+                        received_addr = data;
+                        addr_to_set = true;
+                    }
+                }
+                
+                // getAddr
+                else if (token7 != NULL) {
+                    int data = lwjson_get_val_int(token7);
+                    if (data) {
+                        addr_to_send = true;
+                    }
+                }
+
+
+
     }
 }
 

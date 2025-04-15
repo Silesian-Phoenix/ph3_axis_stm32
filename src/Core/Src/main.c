@@ -63,6 +63,12 @@
   uint16_t ENCODER_recal_data;
   uint16_t ENCODER_offset = 0;
 
+bool addr_to_send = false;
+bool addr_to_set = false;
+int received_addr = false;
+
+
+
   bool ENCODER_init = true;
   bool i2c_data_to_calc = false;
   bool eeprom_data_to_read = true;
@@ -74,6 +80,7 @@
 
   typedef struct {
     uint16_t EE_offset;
+  uint16_t addr;
   } eeStorage_t;
 
   eeStorage_t ee;
@@ -200,10 +207,28 @@ int main(void)
     }
     
     
-    /*testowanie silnika*/
-    // HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_2);
-    // HAL_GPIO_WritePin(MOTOR_DIR_GPIO_Port, MOTOR_DIR_Pin, GPIO_PIN_SET);
-    // HAL_GPIO_WritePin(MOTOR_DIR_GPIO_Port, MOTOR_DIR_Pin, GPIO_PIN_RESET);
+
+    // setAdr
+    if (addr_to_set)
+    {
+      ee.addr = received_addr;
+      EE_Write();
+      addr_to_set = false;
+    }
+
+    // getAdr
+    if (addr_to_send)
+    {
+      EE_Read();
+      char buf_to_send[50];
+      sprintf(buf_to_send, "{\"addr\": %d}", ee.addr);
+      if (!uart2_tx_busy)
+      {
+        HAL_UART_Transmit_DMA(&huart2, (uint8_t *)buf_to_send, strlen(buf_to_send));
+        uart2_tx_busy = true;
+      }
+      addr_to_send = false;
+    }
 
     /* USER CODE END WHILE */
 
