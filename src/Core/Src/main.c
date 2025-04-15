@@ -72,6 +72,8 @@ int received_addr = false;
   bool ENCODER_init = true;
   bool i2c_data_to_calc = false;
   bool eeprom_data_to_read = true;
+bool reset_enable = false;
+bool set_enable = false;
 
   /*JSON*/
   bool uart2_data_received = false;
@@ -154,6 +156,7 @@ int main(void)
   
   EE_Init(&ee, sizeof(eeStorage_t)); 
 
+  HAL_GPIO_WritePin(MOTOR_ENABLE_GPIO_Port, MOTOR_ENABLE_Pin, GPIO_PIN_SET);
   while (1)
   { 
     if ((as5600_buf[0] & (1<<5)) == 0) {
@@ -229,6 +232,22 @@ int main(void)
       }
       addr_to_send = false;
     }
+
+
+    if (set_enable)
+    {
+      set_enable = false;
+      HAL_GPIO_WritePin(MOTOR_ENABLE_GPIO_Port, MOTOR_ENABLE_Pin, GPIO_PIN_RESET);
+      HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, GPIO_PIN_SET);
+    }
+
+    if (reset_enable)
+    {
+      reset_enable = false;
+      HAL_GPIO_WritePin(MOTOR_ENABLE_GPIO_Port, MOTOR_ENABLE_Pin, GPIO_PIN_SET);
+      HAL_GPIO_WritePin(LD3_GPIO_Port, LD3_Pin, GPIO_PIN_RESET);
+    }
+    
 
     /* USER CODE END WHILE */
 

@@ -41,6 +41,9 @@ extern "C" {
 
 /* Exported constants --------------------------------------------------------*/
 /* USER CODE BEGIN EC */
+extern bool reset_enable;
+extern bool set_enable;
+
 extern bool uart2_tx_busy;
 extern bool ENCODER_init;
 extern bool data_to_send;

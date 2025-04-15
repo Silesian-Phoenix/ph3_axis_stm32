@@ -15,6 +15,9 @@ void json_process(char *json_str) {
         const lwjson_token_t *token2 = lwjson_find(&lwjson, "setZero");
         const lwjson_token_t *token3 = lwjson_find(&lwjson, "returnAngle");
 
+        const lwjson_token_t *token4 = lwjson_find(&lwjson, "Arm");
+        const lwjson_token_t *token5 = lwjson_find(&lwjson, "DisArm");
+
         const lwjson_token_t *token6 = lwjson_find(&lwjson, "setAddr");
         const lwjson_token_t *token7 = lwjson_find(&lwjson, "getAddr");
 
@@ -42,6 +45,25 @@ void json_process(char *json_str) {
             }
         }
 
+        // Arm
+        else if (token4 != NULL)
+        {
+            int data = lwjson_get_val_int(token4);
+            if (data)
+            {
+                set_enable = true;
+            }
+        }
+
+        // DisArm
+        else if (token5 != NULL)
+        {
+            int data = lwjson_get_val_int(token5);
+            if (data)
+            {
+                reset_enable = true;
+            }
+        }
 
                 // setAddr
                 else if (token6 != NULL) {
